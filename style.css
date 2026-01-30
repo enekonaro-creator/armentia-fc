@@ -1,0 +1,123 @@
+:root {
+  --orange: #F28C28;
+  --black: #0F0F0F;
+  --white: #FFFFFF;
+  --gray: #B0B0B0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--black);
+  color: var(--white);
+  line-height: 1.6;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(
+      rgba(0,0,0,0.6),
+      rgba(0,0,0,0.6)
+    ),
+    url("assets/images/banner.jpg") center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav {
+  padding: 20px;
+}
+
+.logo-text {
+  font-family: 'Oswald', sans-serif;
+  color: var(--orange);
+}
+
+.hero-content {
+  text-align: center;
+  padding-bottom: 80px;
+}
+
+.hero h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 3rem;
+  letter-spacing: 2px;
+  color: var(--orange);
+}
+
+.hero p {
+  margin: 10px 0 20px;
+  color: var(--gray);
+}
+
+.socials a {
+  margin: 0 10px;
+  color: var(--white);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+.socials a:hover {
+  border-color: var(--orange);
+}
+
+/* SECTIONS */
+.section {
+  padding: 80px 10%;
+}
+
+.section h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  color: var(--orange);
+  margin-bottom: 20px;
+}
+
+/* TABLE */
+.team-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.team-table th,
+.team-table td {
+  padding: 12px;
+  border-bottom: 1px solid #333;
+}
+
+.team-table th {
+  text-align: left;
+  color: var(--gray);
+}
+
+/* SPONSORS */
+.sponsors-grid {
+  display: flex;
+  gap: 40px;
+}
+
+/* FOOTER */
+.footer {
+  padding: 20px;
+  text-align: center;
+  color: var(--gray);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .section {
+    padding: 60px 6%;
+  }
+}

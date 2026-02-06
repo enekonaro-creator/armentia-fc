@@ -699,6 +699,11 @@ html {
 }
 
 /* MÓVIL */
+/* ===== BOTÓN MENÚ (ESCRITORIO) ===== */
+.nav-toggle {
+  display: none;
+}
+
 @media (max-width: 768px) {
 
   .nav {
@@ -708,6 +713,11 @@ html {
 
   .nav-toggle {
     display: block;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--orange);
+    cursor: pointer;
   }
 
   .nav-menu {
@@ -719,12 +729,8 @@ html {
     align-items: center;
   }
 
-  .nav-menu a {
-    font-size: 0.9rem;
-  }
-
-  /* Cuando el menú esté activo */
   .nav-menu.open {
     display: flex;
   }
+}
 }

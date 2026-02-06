@@ -6,7 +6,7 @@
   <title>ARMENTIA FC</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -15,11 +15,16 @@
 <header class="hero">
   <div class="overlay"></div>
 
-  <nav class="nav">
+ <nav class="nav">
+  <div class="nav-brand">
+    <img src="assets/images/escudo.png" alt="Escudo Armentia FC" class="nav-logo">
     <h2 class="logo-text">ARMENTIA FC</h2>
-  </nav>
+  </div>
+</nav>
+
 
   <div class="hero-content">
+  <img src="assets/images/escudo2.png" alt="Escudo Armentia FC" class="hero-logo">
     <h1>ARMENTIA FC</h1>
     <p>Club de fútbol 7 · Álava</p>
 
@@ -38,9 +43,10 @@
     Copa de 3ª División Recreativa de Álava.
   </p>
 
-  <a class="link" href="https://www.faf-aff.eus/pnfg/NPortada" target="_blank">
-    Ver competición oficial
-  </a>
+<a class="link" href="https://www.faf-aff.eus/pnfg/NPcd/NFG_VisClasificacion?cod_primaria=1000120&codjornada=6&codcompeticion=23707479&codgrupo=23707493&codjornada=6&cod_agrupacion=3" target="_blank">
+  Ver clasificación oficial
+</a>
+
 </section>
 
 <section class="section">
@@ -70,13 +76,35 @@
   </table>
 </section>
 
-<section class="section">
+<section class="section sponsors">
   <h2>Patrocinadores</h2>
 
   <div class="sponsors-grid">
-    <p>Bar Garoka</p>
-    <p>Dalvez</p>
+    <a href="https://maps.app.goo.gl/Jas9m99H7XNfWsv8A" target="_blank" class="sponsor">
+      <img src="assets/images/garoka.png" alt="Bar Garoka">
+    </a>
+
+    <a href="https://dalvez.es/" target="_blank" class="sponsor">
+      <img src="assets/images/dalvez.png" alt="Dalvez">
+    </a>
   </div>
+
+<section class="section gallery">
+  <h2>Galería</h2>
+
+  <div class="gallery-grid">
+    <img src="assets/images/gallery/partido1.jpg" alt="Partido Armentia FC" class="gallery-img">
+    <img src="assets/images/gallery/partido2.jpg" alt="Acción de juego" class="gallery-img">
+    <img src="assets/images/gallery/equipo.jpg" alt="Equipo Armentia FC" class="gallery-img">
+    <img src="assets/images/gallery/accion1.jpg" alt="Jugadores en acción" class="gallery-img">
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <img id="lightbox-img" src="" alt="">
+</div>
+
 </section>
 
 <section class="section">
@@ -87,6 +115,21 @@
 <footer class="footer">
   <p>© ARMENTIA FC</p>
 </footer>
+<script>
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const galleryImages = document.querySelectorAll(".gallery-img");
 
+  galleryImages.forEach(img => {
+    img.addEventListener("click", () => {
+      lightboxImg.src = img.src;
+      lightbox.style.display = "flex";
+    });
+  });
+
+  lightbox.addEventListener("click", () => {
+    lightbox.style.display = "none";
+  });
+</script>
 </body>
 </html>

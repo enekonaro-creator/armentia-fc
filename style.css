@@ -403,3 +403,32 @@ body {
 .join-contact a:hover {
   text-decoration: underline;
 }
+/* ===== FIX LINK CLASIFICACIÓN (MÓVIL) ===== */
+
+.link,
+.link:visited,
+.link:hover,
+.link:active {
+  color: var(--orange);
+  text-decoration: none;
+}
+/* ===== FIX ACORDEÓN MÓVIL ===== */
+
+@media (max-width: 768px) {
+
+  .accordion-header {
+    background: none !important;
+    color: var(--orange) !important;
+    padding: 16px 0;
+    border: none;
+  }
+
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  .accordion-item {
+    background: transparent;
+  }
+}

@@ -304,3 +304,102 @@ body {
     max-height: 80%;
   }
 }
+/* ===== PULIDO VISUAL ===== */
+
+/* Separación elegante entre secciones */
+.section + .section {
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Texto más cómodo de leer */
+.section p {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Enlaces más finos */
+.link {
+  display: inline-block;
+  margin-top: 18px;
+  color: var(--orange);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+.overlay {
+  background: rgba(0,0,0,0.55);
+}
+.team-table tr:hover {
+  background: rgba(255,255,255,0.04);
+}
+
+.team-table th {
+  letter-spacing: 0.5px;
+}
+.gallery-grid img {
+  border-radius: 10px;
+}
+.footer {
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+/* ===== ÚNETE AL CLUB (ACORDEÓN) ===== */
+
+.join {
+  text-align: center;
+}
+
+.accordion {
+  max-width: 800px;
+  margin: 30px auto 0;
+  text-align: left;
+}
+
+.accordion-item {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.accordion-header {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 18px 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: var(--orange);
+  text-align: left;
+  cursor: pointer;
+}
+
+.accordion-header:hover {
+  opacity: 0.85;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.accordion-content p {
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.join-contact {
+  margin-top: 30px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.join-contact a {
+  color: var(--orange);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.join-contact a:hover {
+  text-decoration: underline;
+}

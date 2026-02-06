@@ -107,9 +107,47 @@
 
 </section>
 
-<section class="section">
-  <h2>Contacto</h2>
-  <p>📧 armentiafc2005@gmail.com</p>
+<section class="section join">
+  <h2>Únete al club</h2>
+
+  <div class="accordion">
+
+    <div class="accordion-item">
+      <button class="accordion-header">
+        ¿Quieres jugar con nosotros?
+      </button>
+      <div class="accordion-content">
+        <p>
+          ARMENTIA FC es un club amateur de fútbol 7 formado por un grupo de jugadores
+          con buen ambiente y compromiso dentro y fuera del campo.
+        </p>
+        <p>
+          Si te apetece formar parte del equipo o conocernos mejor,
+          escríbenos sin compromiso.
+        </p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header">
+        ¿Te interesa colaborar o patrocinar?
+      </button>
+      <div class="accordion-content">
+        <p>
+          Colaborar con ARMENTIA FC es una forma directa de apoyar el deporte local
+          y dar visibilidad a tu negocio en un entorno cercano y real.
+        </p>
+        <p>
+          Estamos abiertos a nuevas colaboraciones y patrocinios.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="join-contact">
+    📧 <a href="mailto:armentiafc2005@gmail.com">armentiafc2005@gmail.com</a>
+  </p>
 </section>
 
 <footer class="footer">
@@ -131,5 +169,21 @@
     lightbox.style.display = "none";
   });
 </script>
+<script>
+  const accordionHeaders = document.querySelectorAll(".accordion-header");
+
+  accordionHeaders.forEach(header => {
+    header.addEventListener("click", () => {
+      const content = header.nextElementSibling;
+
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
+    });
+  });
+</script>
+
 </body>
 </html>

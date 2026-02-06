@@ -687,3 +687,44 @@ html {
     padding-bottom: 60px;
   }
 }
+/* ===== MENÚ MÓVIL (HAMBURGUESA) ===== */
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--orange);
+  cursor: pointer;
+}
+
+/* MÓVIL */
+@media (max-width: 768px) {
+
+  .nav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+    gap: 18px;
+    align-items: center;
+  }
+
+  .nav-menu a {
+    font-size: 0.9rem;
+  }
+
+  /* Cuando el menú esté activo */
+  .nav-menu.open {
+    display: flex;
+  }
+}

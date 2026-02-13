@@ -10,7 +10,37 @@
 
   <link rel="stylesheet" href="style.css">
 </head>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+const langEus = document.getElementById("lang-eus");
+const langEs = document.getElementById("lang-es");
+const elements = document.querySelectorAll("[data-es]");
+
+function setLanguage(lang) {
+    elements.forEach(el => {
+        el.textContent = el.getAttribute("data-" + lang);
+    });
+
+    langEus.classList.toggle("active", lang === "eus");
+    langEs.classList.toggle("active", lang === "es");
+}
+
+setLanguage("eus");
+
+langEus.addEventListener("click", () => setLanguage("eus"));
+langEs.addEventListener("click", () => setLanguage("es"));
+
+});
+</script>
+
+
 <body>
+<div class="lang-switch">
+  <span id="lang-eus" class="active">EUS</span>
+  <span>|</span>
+  <span id="lang-es">ESP</span>
+</div>
 
 <header class="hero" id="inicio">
 
@@ -25,11 +55,12 @@
 <button class="nav-toggle" aria-label="Abrir menú">☰</button>
 
   <ul class="nav-menu">
-    <li><a href="#inicio">Inicio</a></li>
-    <li><a href="#equipo">Equipo</a></li>
-    <li><a href="#galeria">Galería</a></li>
-    <li><a href="#tienda">Tienda</a></li>
-    <li><a href="#unete">Únete</a></li>
+<a href="#inicio" data-es="INICIO" data-eus="HASIERA">HASIERA</a>
+<a href="#equipo" data-es="EQUIPO" data-eus="TALDEA">TALDEA</a>
+<a href="#galeria" data-es="GALERÍA" data-eus="GALERIA">GALERIA</a>
+<a href="#tienda" data-es="TIENDA" data-eus="DENDA">DENDA</a>
+<a href="#unete" data-es="ÚNETE" data-eus="ELKARTU GUREKIN">ELKARTU GUREKIN</a>
+
   </ul>
 </nav>
 
@@ -38,7 +69,11 @@
   <div class="hero-content">
   <img src="assets/images/escudo2.png" alt="Escudo Armentia FC" class="hero-logo">
     <h1>ARMENTIA FC</h1>
-    <p>Club de fútbol 7 · Álava</p>
+<p data-es="Club de fútbol 7 · Álava" 
+   data-eus="Futbol 7-ko taldea · Araba">
+   Futbol 7ko taldea · Araba
+</p>
+
 
     <div class="socials">
       <a href="https://www.instagram.com/armentiafc_/" target="_blank">Instagram</a>
@@ -48,26 +83,54 @@
   </div>
 </header>
 
-<section class="section">
-  <h2>El Club</h2>
-  <p>
-    ARMENTIA FC es un club amateur de fútbol 7 que compite en la
-    Copa de 3ª División Recreativa de Álava.
+<section class="section" id="club">
+  <h2 
+    data-es="El Club"
+    data-eus="Kluba">
+    Kluba
+  </h2>
+
+  <p
+    data-es="ARMENTIA FC es un club amateur de fútbol 7 que compite en la Copa de 3ª División Recreativa de Álava."
+    data-eus="ARMENTIA FC futbol 7-ko talde bat da. Gaur egun, 3. mailako kopa irabazteko lehian.">
+    ARMENTIA FC futbol 7ko talde bat da. Gaur egun, 3. mailako kopa irabazteko lehian.
   </p>
 
-<a class="shop-button classification-button"
-   href="https://www.faf-aff.eus/pnfg/NPcd/NFG_VisClasificacion?cod_primaria=1000120&codjornada=6&codcompeticion=23707479&codgrupo=23707493&codjornada=6&cod_agrupacion=3"
-   target="_blank">
-  VER CLASIFICACIÓN OFICIAL
-</a>
-
+  <a 
+    href="https://www.faf-aff.eus/pnfg/NPcd/NFG_VisClasificacion?cod_primaria=1000120&codgrupo=23707493&codcompeticion=23707479&codjornada=8"
+    target="_blank"
+    class="shop-button classification-button"
+    data-es="VER CLASIFICACIÓN OFICIAL"
+    data-eus="SAILKAPEN OFIZIALA IKUSI">
+    SAILKAPEN OFIZIALA IKUSI
+  </a>
 </section>
 
+
 <section class="section" id="equipo">
-  <h2>Equipo</h2>
+
+  <h2 
+    data-es="Equipo"
+    data-eus="Taldea">
+    Taldea
+  </h2>
 
   <table class="team-table">
-    <tr><th>Dorsal</th><th>Jugador</th></tr>
+    <tr>
+      <th 
+        data-es="Dorsal"
+        data-eus="Zenbakia">
+        Zenbakia
+      </th>
+
+      <th 
+        data-es="Jugador"
+        data-eus="Jokalaria">
+        Jokalaria
+      </th>
+    </tr>
+
+    <!-- JUGADORES (estos no se traducen) -->
     <tr><td>3</td><td>IGOR</td></tr>
     <tr><td>4</td><td>PUELLES</td></tr>
     <tr><td>5</td><td>DJ</td></tr>
@@ -88,10 +151,15 @@
     <tr><td>69</td><td>A. UGALDE</td></tr>
     <tr><td>97</td><td>GOITI</td></tr>
   </table>
+
 </section>
 
 <section class="section sponsors">
-  <h2>Patrocinadores</h2>
+  <h2 
+  data-es="Patrocinadores"
+  data-eus="Babesleak">
+  Babesleak
+</h2>
 
   <div class="sponsors-grid">
     <a href="https://maps.app.goo.gl/Jas9m99H7XNfWsv8A" target="_blank" class="sponsor">
@@ -104,7 +172,11 @@
   </div>
 
 <section class="section gallery" id="galeria">
-  <h2>Galería</h2>
+  <h2 
+  data-es="Galería"
+  data-eus="Galeria">
+  Galeria
+</h2>
 
   <div class="gallery-grid">
     <img src="assets/images/gallery/partido1.jpg" alt="Partido Armentia FC" class="gallery-img">
@@ -113,19 +185,29 @@
     <img src="assets/images/gallery/accion1.jpg" alt="Jugadores en acción" class="gallery-img">
   </div>
 </section>
-<section class="section shop" id="tienda">
-  <h2>Tienda oficial</h2>
+<section class="section" id="tienda">
 
-  <p class="shop-text">
-    Compra la ropa oficial de ARMENTIA FC.
-    Camisetas, sudaderas y productos del club.
+  <h2 
+    data-es="Tienda Oficial"
+    data-eus="Denda Ofiziala">
+    Denda Ofiziala
+  </h2>
+
+  <p
+    data-es="Compra la ropa oficial de ARMENTIA FC. Camisetas, sudaderas y productos del club."
+    data-eus="Erosi taldeko arropa ofiziala. Kamisetak, jertseak eta gainerako produktuak.">
+    Erosi taldeko arropa ofiziala. Kamisetak, jertseak eta gainerako produktuak.
   </p>
 
-  <a href="https://zentralsports.com/producto/armentia-fc/"
-     target="_blank"
-     class="shop-button">
-     Ir a la tienda
+  <a 
+    href="https://zentralsports.com/producto/armentia-fc/"
+    target="_blank"
+    class="shop-button"
+    data-es="IR A LA TIENDA"
+    data-eus="DENDARA JOAN">
+    DENDARA JOAN
   </a>
+
 </section>
 
 <!-- LIGHTBOX -->
@@ -136,47 +218,77 @@
 </section>
 
 <section class="section join" id="unete">
-  <h2>Únete al club</h2>
+
+  <h2 
+    data-es="Únete al club"
+    data-eus="Egin bat klubarekin">
+    Egin bat klubarekin
+  </h2>
 
   <div class="accordion">
 
+    <!-- PREGUNTA 1 -->
     <div class="accordion-item">
-      <button class="accordion-header">
-        ¿Quieres jugar con nosotros?
+      <button 
+        class="accordion-header"
+        data-es="¿Quieres jugar con nosotros?"
+        data-eus="Gurekin jolastu nahi duzu?">
+        Gurekin jolastu nahi duzu?
       </button>
+
       <div class="accordion-content">
-        <p>
-          ARMENTIA FC es un club amateur de fútbol 7 formado por un grupo de jugadores
-          con buen ambiente y compromiso dentro y fuera del campo.
+
+        <p 
+          data-es="ARMENTIA FC es un club amateur de fútbol 7 formado por un grupo de jugadores con buen ambiente y compromiso dentro y fuera del campo."
+          data-eus="ARMENTIA FC futbol 7ko talde bat da; zelaietan zein zelaietatik kanpo jokalarien arteko konpromisoa eta giro ona gure taldearen izaera dira.">
+          ARMENTIA FC futbol 7ko talde bat da; zelaietan zein zelaietatik kanpo jokalarien arteko konpromisoa eta giro ona gure taldearen izaera dira.
         </p>
-        <p>
-          Si te apetece formar parte del equipo o conocernos mejor,
-          escríbenos sin compromiso.
+
+        <p 
+          data-es="Si te apetece formar parte del equipo o conocernos mejor, escríbenos sin compromiso."
+          data-eus="Parte hartu nahi baduzu edo ezagutu nahi bagaituzu, idatzi konpromisorik gabe.">
+          Parte hartu nahi baduzu edo ezagutu nahi bagaituzu, idatzi konpromisorik gabe.
         </p>
+
       </div>
     </div>
 
+    <!-- PREGUNTA 2 -->
     <div class="accordion-item">
-      <button class="accordion-header">
-        ¿Te interesa colaborar o patrocinar?
+      <button 
+        class="accordion-header"
+        data-es="¿Te interesa colaborar o patrocinar?"
+        data-eus="Lagundu edo babestu nahi duzu?">
+        Lagundu edo babestu nahi duzu?
       </button>
+
       <div class="accordion-content">
-        <p>
-          Colaborar con ARMENTIA FC es una forma directa de apoyar el deporte local
-          y dar visibilidad a tu negocio en un entorno cercano y real.
+
+        <p 
+          data-es="Colaborar con ARMENTIA FC es una forma directa de apoyar el deporte local y dar visibilidad a tu negocio en un entorno cercano y real."
+          data-eus="Armentia FC-rekin lan eginez gero, lekuko kirola sustatzeaz gain zure saltokia ingurune berri batera hurbil dezakezu.">
+          Armentia FC-rekin lan eginez gero, lekuko kirola sustatzeaz gain zure saltokia ingurune berri batera hurbil dezakezu.
         </p>
-        <p>
-          Estamos abiertos a nuevas colaboraciones y patrocinios.
+
+        <p 
+          data-es="Estamos abiertos a nuevas colaboraciones y patrocinios."
+          data-eus="Lankidetza eta babes berrien zain gaude.">
+          Lankidetza eta babes berrien zain gaude.
         </p>
+
       </div>
     </div>
 
   </div>
 
   <p class="join-contact">
-    📧 <a href="mailto:armentiafc2005@gmail.com">armentiafc2005@gmail.com</a>
+    <a href="mailto:armentiafc2005@gmail.com">
+      armentiafc2005@gmail.com
+    </a>
   </p>
+
 </section>
+
 
 <footer class="footer">
   <p>© ARMENTIA FC</p>
@@ -197,21 +309,19 @@
     lightbox.style.display = "none";
   });
 </script>
+
 <script>
-  const accordionHeaders = document.querySelectorAll(".accordion-header");
+  const accordionItems = document.querySelectorAll(".accordion-item");
 
-  accordionHeaders.forEach(header => {
+  accordionItems.forEach(item => {
+    const header = item.querySelector(".accordion-header");
+
     header.addEventListener("click", () => {
-      const content = header.nextElementSibling;
-
-      if (content.style.maxHeight) {
-        content.style.maxHeight = null;
-      } else {
-        content.style.maxHeight = content.scrollHeight + "px";
-      }
+      item.classList.toggle("active");
     });
   });
 </script>
+
 <script>
   const toggle = document.querySelector('.nav-toggle');
   const menu = document.querySelector('.nav-menu');

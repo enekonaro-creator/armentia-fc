@@ -1,0 +1,36 @@
+name: Sincronizar Federación
+
+on:
+  schedule:
+    - cron: "15 7 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-faf
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar web
+        uses: actions/checkout@v4
+      - name: Preparar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Leer datos de la FAF
+        run: node scripts/sync-faf.mjs
+      - name: Validar web
+        run: npm test
+      - name: Publicar si hay cambios
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/site.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Actualizar resultados y clasificación desde FAF"
+          git push

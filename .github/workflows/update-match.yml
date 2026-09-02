@@ -1,0 +1,90 @@
+name: Actualizar partido
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Qué quieres actualizar"
+        required: true
+        type: choice
+        options:
+          - next
+          - result
+          - clear-next
+      opponent:
+        description: "Rival (vacío solo para clear-next)"
+        required: false
+        type: string
+      date_time:
+        description: "Fecha ISO, ej. 2026-09-12T18:00:00+02:00"
+        required: false
+        type: string
+      home_away:
+        description: "Local o visitante"
+        required: false
+        type: choice
+        options:
+          - home
+          - away
+      venue:
+        description: "Campo"
+        required: false
+        type: string
+      competition_eu:
+        description: "Competición en euskera"
+        required: false
+        default: "2026/27 Liga"
+        type: string
+      competition_es:
+        description: "Competición en castellano"
+        required: false
+        default: "Liga 2026/27"
+        type: string
+      goals_for:
+        description: "Goles de Armentia (solo result)"
+        required: false
+        type: string
+      goals_against:
+        description: "Goles del rival (solo result)"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar web
+        uses: actions/checkout@v4
+
+      - name: Preparar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Actualizar datos
+        run: node scripts/update-match.mjs
+        env:
+          MODE: ${{ inputs.mode }}
+          OPPONENT: ${{ inputs.opponent }}
+          DATE_TIME: ${{ inputs.date_time }}
+          HOME_AWAY: ${{ inputs.home_away }}
+          VENUE: ${{ inputs.venue }}
+          COMPETITION_EU: ${{ inputs.competition_eu }}
+          COMPETITION_ES: ${{ inputs.competition_es }}
+          GOALS_FOR: ${{ inputs.goals_for }}
+          GOALS_AGAINST: ${{ inputs.goals_against }}
+
+      - name: Validar web
+        run: npm test
+
+      - name: Publicar actualización
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/site.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Actualizar datos del partido"
+          git push

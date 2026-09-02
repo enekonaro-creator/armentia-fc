@@ -1,0 +1,15 @@
+{
+  "name": "armentia-fc-web",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Web oficial de Armentia FC",
+  "scripts": {
+    "test": "node --check script.js && node --check scripts/sync-faf.mjs && node --check scripts/update-player-stats.mjs && node scripts/validate-data.mjs",
+    "sync:faf": "node scripts/sync-faf.mjs",
+    "sync:faf:dry": "node scripts/sync-faf.mjs --dry-run",
+    "preview:build": "node scripts/build-preview.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

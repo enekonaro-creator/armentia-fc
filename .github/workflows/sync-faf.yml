@@ -1,12 +1,19 @@
 name: Sincronizar Federación
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - data/faf-config.json
+      - scripts/sync-faf.mjs
+      - .github/workflows/sync-faf.yml
   schedule:
     - cron: "15 7 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
+  pages: write
 
 concurrency:
   group: sync-faf
@@ -27,6 +34,7 @@ jobs:
       - name: Validar web
         run: npm test
       - name: Publicar si hay cambios
+        id: publish
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -34,3 +42,9 @@ jobs:
           git diff --cached --quiet && exit 0
           git commit -m "Actualizar resultados y clasificación desde FAF"
           git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+      - name: Actualizar GitHub Pages
+        if: steps.publish.outputs.changed == 'true' || github.event_name == 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"

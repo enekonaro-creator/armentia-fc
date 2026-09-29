@@ -16,7 +16,7 @@ Los dorsales no se pueden repetir. Cuando la plantilla sea definitiva, cambia:
 
 ## Clasificación
 
-Cuando la FAF publique la temporada, pega los enlaces en `data/faf-config.json`:
+La liga 2026/27 está conectada al grupo A de Tercera División F7 (grupo `25027571`, equipo `22788077`, temporada `22`). Los enlaces se guardan en `data/faf-config.json`:
 
 ```json
 {
@@ -25,7 +25,9 @@ Cuando la FAF publique la temporada, pega los enlaces en `data/faf-config.json`:
 }
 ```
 
-Después ejecuta una vez **Actions → Sincronizar Federación → Run workflow**. A partir de ahí se comprobará automáticamente cada día. Si se dejan vacíos, la web muestra el estado de espera y no inventa partidos ni clasificación.
+Los cambios de configuración ejecutan automáticamente la sincronización. También puedes usar **Actions → Sincronizar Federación → Run workflow**. Se comprueba cada día y se publica en GitHub Pages cuando hay cambios. Si falla la lectura, conserva los últimos datos válidos.
+
+Las fechas sin horario se guardan como `AAAA-MM-DD` y aparecen con «Hora por confirmar». El campo se obtiene de la jornada oficial cuando está publicado.
 
 ## Partidos desde GitHub Actions
 

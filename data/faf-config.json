@@ -1,9 +1,12 @@
 {
-  "teamUrl": "",
-  "standingsUrl": "",
-  "teamAliases": ["ARMENTIA FC", "GAROKA"],
+  "teamUrl": "https://www.faf-aff.eus/pnfg/NPcd/NFG_VisCompeticiones_Grupo?cod_primaria=1000123&codequipo=22788077&codgrupo=25027571",
+  "standingsUrl": "https://www.faf-aff.eus/pnfg/NPcd/NFG_VisClasificacion?cod_primaria=1000120&codgrupo=25027571&codcompeticion=24057902",
+  "teamId": "22788077",
+  "seasonId": "22",
+  "season": "2026-2027",
+  "teamAliases": ["ARMENTIA FC", "ARMENTIA F.C.", "GAROKA"],
   "competition": {
-    "eu": "2026/27 Liga",
-    "es": "Liga 2026/27"
+    "eu": "F7 3. maila · A taldea",
+    "es": "3ª División F7 · Grupo A"
   }
 }

@@ -2,15 +2,430 @@
   "season": "2026/27",
   "defaultLanguage": "eu",
   "rosterStatus": "provisional",
-  "standingsUrl": "",
+  "standingsUrl": "https://www.faf-aff.eus/pnfg/NPcd/NFG_VisClasificacion?cod_primaria=1000120&codgrupo=25027571&codcompeticion=24057902",
   "dataSource": {
     "type": "faf",
-    "updatedAt": null
+    "updatedAt": "2026-09-28T19:46:37.130Z"
   },
-  "nextMatch": null,
+  "nextMatch": {
+    "round": 1,
+    "opponent": "WORLD INTER",
+    "date": "2026-10-04T09:30:00+02:00",
+    "home": false,
+    "venue": "SANSOMENDI-2",
+    "competition": {
+      "eu": "F7 3. maila · A taldea",
+      "es": "3ª División F7 · Grupo A"
+    }
+  },
   "lastMatch": null,
-  "matches": [],
-  "standings": [],
+  "matches": [
+    {
+      "round": 1,
+      "opponent": "WORLD INTER",
+      "date": "2026-10-04T09:30:00+02:00",
+      "home": false,
+      "venue": "SANSOMENDI-2",
+      "competition": {
+        "eu": "F7 3. maila · A taldea",
+        "es": "3ª División F7 · Grupo A"
+      }
+    },
+    {
+      "round": 2,
+      "opponent": "CERVECERÍA TXISTU",
+      "date": "2026-10-18",
+      "home": true,
+      "venue": "",
+      "competition": {
+        "eu": "F7 3. maila · A taldea",
+        "es": "3ª División F7 · Grupo A"
+      }
+    },
+    {
+      "round": 3,
+      "opponent": "ESKALON CV",
+      "date": "2026-10-25",
+      "home": false,
+      "venue": "",
+      "competition": {
+        "eu": "F7 3. maila · A taldea",
+        "es": "3ª División F7 · Grupo A"
+      }
+    },
+    {
+      "round": 4,
+      "opponent": "GAZTES FC",
+      "date": "2026-11-01",
+      "home": true,
+      "venue": "",
+      "competition": {
+        "eu": "F7 3. maila · A taldea",
+        "es": "3ª División F7 · Grupo A"
+      }
+    },
+    {
+      "round": 5,
+      "opponent": "MACABI DE LEVANTAR",
+      "date": "2026-11-08",
+      "home": false,
+      "venue": "",
+      "competition": {
+        "eu": "F7 3. maila · A taldea",
+        "es": "3ª División F7 · Grupo A"
+      }
+    },
+    {
+      "round": 6,
+      "opponent": "NIUTIM F7",
+      "date": "2026-11-15",
+      "home": true,
+      "venue": "",
+      "competition": {
+        "eu": "F7 3. maila · A taldea",
+        "es": "3ª División F7 · Grupo A"
+      }
+    },
+    {
+      "round": 7,
+      "opponent": "RECREATIVO URKO TABERNA",
+      "date": "2026-11-22",
+      "home": false,
+      "venue": "",
+      "competition": {
+        "eu": "F7 3. maila · A taldea",
+        "es": "3ª División F7 · Grupo A"
+      }
+    },
+    {
+      "round": 8,
+      "opponent": "TAPADERA FC",
+      "date": "2026-11-29",
+      "home": true,
+      "venue": "",
+      "competition": {
+        "eu": "F7 3. maila · A taldea",
+        "es": "3ª División F7 · Grupo A"
+      }
+    },
+    {
+      "round": 9,
+      "opponent": "AKERBELTZ KIROL KLUBA",
+      "date": "2026-12-13",
+      "home": false,
+      "venue": "",
+      "competition": {
+        "eu": "F7 3. maila · A taldea",
+        "es": "3ª División F7 · Grupo A"
+      }
+    },
+    {
+      "round": 10,
+      "opponent": "BIRRAREAL FC",
+      "date": "2026-12-20",
+      "home": true,
+      "venue": "",
+      "competition": {
+        "eu": "F7 3. maila · A taldea",
+        "es": "3ª División F7 · Grupo A"
+      }
+    },
+    {
+      "round": 11,
+      "opponent": "EGUZKILORE-DURANA",
+      "date": "2027-01-10",
+      "home": false,
+      "venue": "",
+      "competition": {
+        "eu": "F7 3. maila · A taldea",
+        "es": "3ª División F7 · Grupo A"
+      }
+    },
+    {
+      "round": 12,
+      "opponent": "FOJANSA INTER-GASTEIZ F7",
+      "date": "2027-01-17",
+      "home": true,
+      "venue": "",
+      "competition": {
+        "eu": "F7 3. maila · A taldea",
+        "es": "3ª División F7 · Grupo A"
+      }
+    },
+    {
+      "round": 13,
+      "opponent": "LA MANDARINA MECANICA FC",
+      "date": "2027-01-24",
+      "home": false,
+      "venue": "",
+      "competition": {
+        "eu": "F7 3. maila · A taldea",
+        "es": "3ª División F7 · Grupo A"
+      }
+    },
+    {
+      "round": 14,
+      "opponent": "MATURE LOVERS",
+      "date": "2027-01-31",
+      "home": true,
+      "venue": "",
+      "competition": {
+        "eu": "F7 3. maila · A taldea",
+        "es": "3ª División F7 · Grupo A"
+      }
+    },
+    {
+      "round": 15,
+      "opponent": "PARTIZAN BO",
+      "date": "2027-02-14",
+      "home": false,
+      "venue": "",
+      "competition": {
+        "eu": "F7 3. maila · A taldea",
+        "es": "3ª División F7 · Grupo A"
+      }
+    },
+    {
+      "round": 16,
+      "opponent": "ROCK CIRCUS",
+      "date": "2027-02-21",
+      "home": true,
+      "venue": "",
+      "competition": {
+        "eu": "F7 3. maila · A taldea",
+        "es": "3ª División F7 · Grupo A"
+      }
+    },
+    {
+      "round": 17,
+      "opponent": "VASCOS DA GAMA",
+      "date": "2027-02-28",
+      "home": false,
+      "venue": "",
+      "competition": {
+        "eu": "F7 3. maila · A taldea",
+        "es": "3ª División F7 · Grupo A"
+      }
+    }
+  ],
+  "standings": [
+    {
+      "position": 1,
+      "team": "AKERBELTZ KIROL KLUBA",
+      "points": 0,
+      "played": 0,
+      "won": 0,
+      "drawn": 0,
+      "lost": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "isArmentia": false
+    },
+    {
+      "position": 2,
+      "team": "ARMENTIA F.C.",
+      "points": 0,
+      "played": 0,
+      "won": 0,
+      "drawn": 0,
+      "lost": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "isArmentia": true
+    },
+    {
+      "position": 3,
+      "team": "BIRRAREAL FC",
+      "points": 0,
+      "played": 0,
+      "won": 0,
+      "drawn": 0,
+      "lost": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "isArmentia": false
+    },
+    {
+      "position": 4,
+      "team": "CERVECERÍA TXISTU",
+      "points": 0,
+      "played": 0,
+      "won": 0,
+      "drawn": 0,
+      "lost": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "isArmentia": false
+    },
+    {
+      "position": 5,
+      "team": "EGUZKILORE-DURANA",
+      "points": 0,
+      "played": 0,
+      "won": 0,
+      "drawn": 0,
+      "lost": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "isArmentia": false
+    },
+    {
+      "position": 6,
+      "team": "ESKALON CV",
+      "points": 0,
+      "played": 0,
+      "won": 0,
+      "drawn": 0,
+      "lost": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "isArmentia": false
+    },
+    {
+      "position": 7,
+      "team": "FOJANSA INTER-GASTEIZ F7",
+      "points": 0,
+      "played": 0,
+      "won": 0,
+      "drawn": 0,
+      "lost": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "isArmentia": false
+    },
+    {
+      "position": 8,
+      "team": "GAZTES FC",
+      "points": 0,
+      "played": 0,
+      "won": 0,
+      "drawn": 0,
+      "lost": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "isArmentia": false
+    },
+    {
+      "position": 9,
+      "team": "LA MANDARINA MECANICA FC",
+      "points": 0,
+      "played": 0,
+      "won": 0,
+      "drawn": 0,
+      "lost": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "isArmentia": false
+    },
+    {
+      "position": 10,
+      "team": "MACABI DE LEVANTAR",
+      "points": 0,
+      "played": 0,
+      "won": 0,
+      "drawn": 0,
+      "lost": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "isArmentia": false
+    },
+    {
+      "position": 11,
+      "team": "MATURE LOVERS",
+      "points": 0,
+      "played": 0,
+      "won": 0,
+      "drawn": 0,
+      "lost": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "isArmentia": false
+    },
+    {
+      "position": 12,
+      "team": "NIUTIM F7",
+      "points": 0,
+      "played": 0,
+      "won": 0,
+      "drawn": 0,
+      "lost": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "isArmentia": false
+    },
+    {
+      "position": 13,
+      "team": "PARTIZAN BO",
+      "points": 0,
+      "played": 0,
+      "won": 0,
+      "drawn": 0,
+      "lost": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "isArmentia": false
+    },
+    {
+      "position": 14,
+      "team": "RECREATIVO URKO TABERNA",
+      "points": 0,
+      "played": 0,
+      "won": 0,
+      "drawn": 0,
+      "lost": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "isArmentia": false
+    },
+    {
+      "position": 15,
+      "team": "ROCK CIRCUS",
+      "points": 0,
+      "played": 0,
+      "won": 0,
+      "drawn": 0,
+      "lost": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "isArmentia": false
+    },
+    {
+      "position": 16,
+      "team": "TAPADERA FC",
+      "points": 0,
+      "played": 0,
+      "won": 0,
+      "drawn": 0,
+      "lost": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "isArmentia": false
+    },
+    {
+      "position": 17,
+      "team": "VASCOS DA GAMA",
+      "points": 0,
+      "played": 0,
+      "won": 0,
+      "drawn": 0,
+      "lost": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "isArmentia": false
+    },
+    {
+      "position": 18,
+      "team": "WORLD INTER",
+      "points": 0,
+      "played": 0,
+      "won": 0,
+      "drawn": 0,
+      "lost": 0,
+      "goalsFor": 0,
+      "goalsAgainst": 0,
+      "isArmentia": false
+    }
+  ],
   "playerStats": [],
   "achievements": [
     {
@@ -36,25 +451,82 @@
     }
   ],
   "players": [
-    { "number": 3, "name": "Igor" },
-    { "number": 4, "name": "Puelles" },
-    { "number": 5, "name": "DJ" },
-    { "number": 6, "name": "García" },
-    { "number": 7, "name": "Lier" },
-    { "number": 8, "name": "Areitio" },
-    { "number": 10, "name": "Zubi" },
-    { "number": 11, "name": "Iru" },
-    { "number": 16, "name": "Navarro" },
-    { "number": 17, "name": "Mugaburu" },
-    { "number": 20, "name": "U. Uriarte" },
-    { "number": 21, "name": "Ruiki" },
-    { "number": 23, "name": "Rodríguez" },
-    { "number": 31, "name": "Vicens" },
-    { "number": 44, "name": "Alvez" },
-    { "number": 47, "name": "Oinatz" },
-    { "number": 59, "name": "Sarri" },
-    { "number": 69, "name": "A. Ugalde" },
-    { "number": 97, "name": "Goiti" }
+    {
+      "number": 3,
+      "name": "Igor"
+    },
+    {
+      "number": 4,
+      "name": "Puelles"
+    },
+    {
+      "number": 5,
+      "name": "DJ"
+    },
+    {
+      "number": 6,
+      "name": "García"
+    },
+    {
+      "number": 7,
+      "name": "Lier"
+    },
+    {
+      "number": 8,
+      "name": "Areitio"
+    },
+    {
+      "number": 10,
+      "name": "Zubi"
+    },
+    {
+      "number": 11,
+      "name": "Iru"
+    },
+    {
+      "number": 16,
+      "name": "Navarro"
+    },
+    {
+      "number": 17,
+      "name": "Mugaburu"
+    },
+    {
+      "number": 20,
+      "name": "U. Uriarte"
+    },
+    {
+      "number": 21,
+      "name": "Ruiki"
+    },
+    {
+      "number": 23,
+      "name": "Rodríguez"
+    },
+    {
+      "number": 31,
+      "name": "Vicens"
+    },
+    {
+      "number": 44,
+      "name": "Alvez"
+    },
+    {
+      "number": 47,
+      "name": "Oinatz"
+    },
+    {
+      "number": 59,
+      "name": "Sarri"
+    },
+    {
+      "number": 69,
+      "name": "A. Ugalde"
+    },
+    {
+      "number": 97,
+      "name": "Goiti"
+    }
   ],
   "sponsors": [
     {
@@ -66,6 +538,11 @@
       "name": "Dalvez",
       "logo": "assets/images/dalvez.png",
       "url": "https://dalvez.es/"
+    },
+    {
+      "name": "Abaienea",
+      "logo": "assets/images/abaienea.jpg",
+      "url": "https://www.abaienea.es/"
     }
   ],
   "gallery": [
@@ -180,7 +657,9 @@
       "contactTitle": "Jokatu, lagundu edo babestu.",
       "contactBody": "Taldearekin jokatu nahi baduzu, kolaborazio bat proposatu nahi baduzu edo gurekin harremanetan jarri nahi baduzu, idatzi.",
       "contactButton": "Idatzi e-maila",
-      "dataError": "Ezin izan dira denboraldiko datuak kargatu. Saiatu berriro geroago."
+      "dataError": "Ezin izan dira denboraldiko datuak kargatu. Saiatu berriro geroago.",
+      "timePending": "Ordua zehazteke",
+      "venuePending": "Zelaia zehazteke"
     },
     "es": {
       "skipLink": "Ir al contenido",
@@ -263,7 +742,13 @@
       "contactTitle": "Juega, colabora o patrocina.",
       "contactBody": "Si quieres jugar con el equipo, proponer una colaboración o ponerte en contacto con nosotros, escríbenos.",
       "contactButton": "Enviar un email",
-      "dataError": "No se han podido cargar los datos de la temporada. Inténtalo de nuevo más tarde."
+      "dataError": "No se han podido cargar los datos de la temporada. Inténtalo de nuevo más tarde.",
+      "timePending": "Hora por confirmar",
+      "venuePending": "Campo por confirmar"
     }
+  },
+  "competition": {
+    "eu": "F7 3. maila · A taldea",
+    "es": "3ª División F7 · Grupo A"
   }
 }

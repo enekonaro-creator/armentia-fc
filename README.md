@@ -28,14 +28,15 @@ La automatización valida los datos, crea el commit y GitHub Pages publica el ca
 
 ### Sincronización con la Federación Alavesa
 
-El flujo **Sincronizar Federación** se ejecuta una vez al día. Lee la ficha del equipo y la clasificación, valida la respuesta y solo publica si encuentra cambios. Mientras la FAF no haya publicado la temporada 2026/27, los enlaces de `data/faf-config.json` permanecen vacíos y el flujo termina sin modificar la web.
+El flujo **Sincronizar Federación** se ejecuta una vez al día (07:15 UTC) y al actualizar su configuración. Lee el calendario del equipo, la clasificación y el campo de los partidos programados. Valida la temporada y los rivales antes de guardar. Si hay cambios, los sube y solicita expresamente la publicación en GitHub Pages.
 
-Cuando se publiquen los datos solo hay que introducir:
+La temporada 2026/27 ya está configurada en `data/faf-config.json`: **Tercera División F7, grupo A**, equipo `22788077`, grupo `25027571`. Para cambiar de competición se actualizan:
 
 - el enlace de la ficha de Armentia FC;
 - el enlace de la clasificación de su grupo.
+- los identificadores de equipo y temporada, y el nombre de la competición.
 
-El equipo se identifica mediante los alias `ARMENTIA FC` y `GAROKA`, pero en la web siempre se muestra **Armentia FC**.
+La clasificación identifica al equipo por su código; el calendario reconoce `ARMENTIA F.C.`, `ARMENTIA FC` y `GAROKA`. En la web siempre se muestra **Armentia FC**. Las fechas sin hora publicada se muestran como **Hora por confirmar**, y todas las horas usan la zona horaria de Madrid.
 
 ### Estadísticas de jugadores
 
@@ -58,8 +59,7 @@ npm test
 ## Antes de publicar la temporada 2026/27
 
 - Confirmar la plantilla y cambiar `rosterStatus` a `confirmed`.
-- Añadir los dos enlaces oficiales en `data/faf-config.json`.
-- Probar manualmente el flujo **Sincronizar Federación**.
+- Revisar el flujo **Sincronizar Federación** en Actions si dejan de actualizarse los datos.
 - Sustituir o ampliar las fotos cuando estén disponibles las de la nueva temporada.
 
 Consulta [docs/ACTUALIZAR_WEB.md](docs/ACTUALIZAR_WEB.md) para ejemplos exactos.

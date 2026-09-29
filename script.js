@@ -53,12 +53,12 @@ function formatDate(value) {
   if (Number.isNaN(date.getTime())) return value;
 
   return new Intl.DateTimeFormat(locale, {
+    timeZone: "Europe/Madrid",
     weekday: "long",
     day: "numeric",
     month: "long",
-    hour: "2-digit",
-    minute: "2-digit"
-  }).format(date);
+    ...(value.includes("T") ? { hour: "2-digit", minute: "2-digit" } : {})
+  }).format(date) + (value.includes("T") ? "" : ` · ${translate("timePending")}`);
 }
 
 function formatShortDate(value) {
@@ -67,11 +67,11 @@ function formatShortDate(value) {
   if (Number.isNaN(date.getTime())) return value;
 
   return new Intl.DateTimeFormat(locale, {
+    timeZone: "Europe/Madrid",
     day: "2-digit",
     month: "short",
-    hour: "2-digit",
-    minute: "2-digit"
-  }).format(date);
+    ...(value.includes("T") ? { hour: "2-digit", minute: "2-digit" } : {})
+  }).format(date) + (value.includes("T") ? "" : ` · ${translate("timePending")}`);
 }
 
 function formatSyncDate(value) {
@@ -79,6 +79,7 @@ function formatSyncDate(value) {
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return "";
   return new Intl.DateTimeFormat(locale, {
+    timeZone: "Europe/Madrid",
     day: "numeric",
     month: "short",
     year: "numeric",
@@ -94,6 +95,9 @@ function applyTranslations() {
     const key = node.dataset.i18n;
     node.textContent = translate(key);
   });
+  if (state.data.competition) {
+    document.querySelector('[data-i18n="standingsEyebrow"]').textContent = localized(state.data.competition);
+  }
 
   document.querySelectorAll("[data-lang]").forEach((button) => {
     button.setAttribute("aria-pressed", String(button.dataset.lang === state.language));
@@ -133,7 +137,7 @@ function renderMatchCard(container, match, type) {
   const centre = element(
     "span",
     type === "next" ? "match-versus" : "match-score",
-    type === "next" ? "VS" : `${match.goalsFor}–${match.goalsAgainst}`
+    type === "next" ? "VS" : (match.home ? `${match.goalsFor}–${match.goalsAgainst}` : `${match.goalsAgainst}–${match.goalsFor}`)
   );
 
   if (match.home) {
@@ -145,7 +149,7 @@ function renderMatchCard(container, match, type) {
   const meta = element("p", "match-meta");
   meta.append(
     element("span", "", translate(match.home ? "home" : "away")),
-    element("span", "", match.venue || ""),
+    element("span", "", match.venue || translate("venuePending")),
     element("span", "", localized(match.competition))
   );
 
@@ -193,7 +197,7 @@ function renderFixtureList(titleKey, matches, className) {
     const item = element("article", "fixture-row");
     const round = element("span", "fixture-round", `${translate("roundShort")} ${match.round ?? "–"}`);
     const opponent = element("strong", "fixture-opponent", match.opponent);
-    const detail = element("span", "fixture-detail", `${formatShortDate(match.date)} · ${translate(match.home ? "home" : "away")}`);
+    const detail = element("span", "fixture-detail", `${formatShortDate(match.date)} · ${translate(match.home ? "home" : "away")}${match.venue ? ` · ${match.venue}` : ""}`);
     const result = match.goalsFor === undefined || match.goalsFor === null
       ? element("span", "fixture-time", translate("pending"))
       : element("strong", "fixture-result", `${match.goalsFor}–${match.goalsAgainst}`);

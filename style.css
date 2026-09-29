@@ -1001,7 +1001,7 @@ h3 {
 
 .sponsor-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
 
@@ -1024,7 +1024,7 @@ h3 {
 .sponsor-card img {
   width: auto;
   max-width: min(260px, 80%);
-  max-height: 100px;
+  max-height: 150px;
   object-fit: contain;
 }
 
@@ -1240,6 +1240,16 @@ h3 {
 
 /* Tablet */
 @media (max-width: 1020px) {
+  .sponsor-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sponsor-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    width: calc(50% - 9px);
+    justify-self: center;
+  }
+
   :root {
     --header-height: 68px;
   }
@@ -1497,6 +1507,11 @@ h3 {
 
   .sponsor-grid {
     grid-template-columns: 1fr;
+  }
+
+  .sponsor-card:last-child:nth-child(odd) {
+    grid-column: auto;
+    width: auto;
   }
 
   .sponsor-card {

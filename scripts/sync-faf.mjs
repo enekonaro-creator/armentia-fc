@@ -17,6 +17,7 @@ if (!config.teamUrl || !config.standingsUrl) {
 const normalize = (value) => value
   .normalize("NFD")
   .replace(/[\u0300-\u036f]/g, "")
+  .replace(/\./g, "")
   .replace(/\s+/g, " ")
   .trim()
   .toUpperCase();
@@ -69,7 +70,8 @@ function madridOffset(year, month, day) {
 function parseDate(raw) {
   const match = raw.match(/(\d{2})-(\d{2})-(\d{4})(?:\s+(\d{2}):(\d{2}))?/);
   if (!match) throw new Error(`Fecha FAF no reconocida: ${raw}`);
-  const [, day, month, year, hour = "00", minute = "00"] = match;
+  const [, day, month, year, hour, minute] = match;
+  if (hour === undefined) return `${year}-${month}-${day}`;
   return `${year}-${month}-${day}T${hour}:${minute}:00${madridOffset(Number(year), Number(month), Number(day))}`;
 }
 
@@ -79,6 +81,7 @@ async function createFafSession(origin) {
   for (let redirect = 0; redirect < 5; redirect += 1) {
     const response = await fetch(url, {
       redirect: "manual",
+      signal: AbortSignal.timeout(30000),
       headers: { cookie, "user-agent": "ArmentiaFC/1.0 (+https://armentiafc.com)" }
     });
     const setCookie = response.headers.get("set-cookie");
@@ -95,17 +98,27 @@ async function createFafSession(origin) {
 
 async function fetchFaf(url, cookie) {
   const response = await fetch(url, {
+    signal: AbortSignal.timeout(30000),
     headers: {
       accept: "text/html,application/xhtml+xml",
       cookie,
       "user-agent": "ArmentiaFC/1.0 (+https://armentiafc.com)"
     }
   });
-  const html = await response.text();
+  const bytes = await response.arrayBuffer();
+  const charset = response.headers.get("content-type")?.match(/charset=([^;\s]+)/i)?.[1]
+    ?? "iso-8859-15";
+  const html = new TextDecoder(charset).decode(bytes);
   if (!response.ok || html.length < 5000 || !/<table\b/i.test(html)) {
     throw new Error(`La FAF no devolvió datos utilizables (${response.status}, ${html.length} bytes).`);
   }
   return html;
+}
+
+function assertSeason(html) {
+  if (config.season && !text(html).includes(config.season)) {
+    throw new Error(`La respuesta FAF no corresponde a la temporada ${config.season}.`);
+  }
 }
 
 function parseMatches(html) {
@@ -153,7 +166,8 @@ function parseStandings(html) {
 
   const standings = [];
   for (const row of rows(table)) {
-    const values = cells(row).map(text);
+    const rowCells = cells(row);
+    const values = rowCells.map(text);
     if (values.length < 14 || !/^\d+$/.test(values[1])) continue;
     const numbers = values.map((value) => Number.parseInt(value, 10));
     standings.push({
@@ -166,13 +180,35 @@ function parseStandings(html) {
       lost: numbers[7] + numbers[11],
       goalsFor: numbers[12],
       goalsAgainst: numbers[13],
-      isArmentia: isArmentia(values[2])
+      isArmentia: config.teamId
+        ? new RegExp(`codequipo=${config.teamId}(?:&|["'\\s>])`, "i").test(decode(rowCells[2]))
+        : isArmentia(values[2])
     });
   }
   if (!standings.length || !standings.some((team) => team.isArmentia)) {
     throw new Error("La clasificación no contiene a Armentia FC con los alias configurados.");
   }
   return standings;
+}
+
+async function addVenue(match, cookie) {
+  const url = new URL("/pnfg/NPcd/NFG_CmpJornada", config.teamUrl);
+  const standingsUrl = new URL(config.standingsUrl);
+  url.search = new URLSearchParams({
+    cod_primaria: "1000120", CodTemporada: config.seasonId,
+    CodCompeticion: standingsUrl.searchParams.get("codcompeticion"),
+    CodGrupo: standingsUrl.searchParams.get("codgrupo"), CodJornada: String(match.round)
+  });
+  const html = await fetchFaf(url.href, cookie);
+  assertSeason(html);
+  const cards = [...html.matchAll(/<table\b[^>]*>\s*<tbody>\s*<tr\b[\s\S]*?<\/tbody>\s*<\/table>/gi)];
+  const card = cards.map((entry) => entry[0]).find((entry) => {
+    const names = [...entry.matchAll(/<h4\b[^>]*>([\s\S]*?)<\/h4>/gi)].map((h) => text(h[1]));
+    return names.some(isArmentia) && names.some((name) => normalize(name) === normalize(match.opponent));
+  });
+  if (!card) throw new Error(`No se reconoce el partido de la jornada ${match.round}.`);
+  const field = card.match(/<a\b[^>]*href=["'][^"']*NFG_VisCampos[^"']*["'][^>]*>([\s\S]*?)<\/a>/i);
+  match.venue = field ? text(field[1]) : "";
 }
 
 const fafOrigin = new URL(config.teamUrl).origin;
@@ -183,10 +219,25 @@ for (const key of [...latestStandingsUrl.searchParams.keys()]) {
 const sessionCookie = await createFafSession(fafOrigin);
 const teamHtml = await fetchFaf(config.teamUrl, sessionCookie);
 const standingsHtml = await fetchFaf(latestStandingsUrl.href, sessionCookie);
+assertSeason(teamHtml);
+assertSeason(standingsHtml);
 const matches = parseMatches(teamHtml);
 const standings = parseStandings(standingsHtml);
+if (matches.some((match) => !standings.some((team) => normalize(team.team) === normalize(match.opponent)))) {
+  throw new Error("El calendario y la clasificación no corresponden al mismo grupo.");
+}
+const previousSite = JSON.parse(await readFile(sitePath, "utf8"));
+for (const match of matches) {
+  const previous = previousSite.matches.find((item) => item.round === match.round && item.opponent === match.opponent && item.date === match.date);
+  if (previous) match.venue = previous.venue;
+}
 const played = matches.filter((match) => Number.isInteger(match.goalsFor));
-const upcoming = matches.filter((match) => !Number.isInteger(match.goalsFor) && new Date(match.date) >= new Date());
+const today = new Intl.DateTimeFormat("sv-SE", { timeZone: "Europe/Madrid" }).format(new Date());
+const upcoming = matches.filter((match) => !Number.isInteger(match.goalsFor) && match.date.slice(0, 10) >= today);
+if (config.seasonId) {
+  const refresh = new Set([upcoming[0], played.at(-1), ...upcoming.filter((match) => match.date.includes("T"))]);
+  for (const match of refresh) if (match) await addVenue(match, sessionCookie);
+}
 
 if (dryRun) {
   console.log(JSON.stringify({ matches: matches.length, standings: standings.length, lastMatch: played.at(-1), nextMatch: upcoming[0] ?? null }, null, 2));
@@ -200,6 +251,7 @@ site.standings = standings;
 site.lastMatch = played.at(-1) ?? null;
 site.nextMatch = upcoming[0] ?? null;
 site.standingsUrl = latestStandingsUrl.href;
+site.competition = config.competition;
 site.dataSource = {
   type: "faf",
   updatedAt: changed ? new Date().toISOString() : site.dataSource?.updatedAt ?? new Date().toISOString()

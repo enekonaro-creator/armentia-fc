@@ -5,7 +5,7 @@
   "standingsUrl": "https://www.faf-aff.eus/pnfg/NPcd/NFG_VisClasificacion?cod_primaria=1000120&codgrupo=25027571&codcompeticion=24057902",
   "dataSource": {
     "type": "faf",
-    "updatedAt": "2026-09-28T19:46:37.130Z"
+    "updatedAt": "2026-10-03T12:33:38.541Z"
   },
   "nextMatch": {
     "round": 1,
@@ -88,7 +88,7 @@
     },
     {
       "round": 7,
-      "opponent": "RECREATIVO URKO TABERNA",
+      "opponent": "DUFF F.C.",
       "date": "2026-11-22",
       "home": false,
       "venue": "",
@@ -259,7 +259,7 @@
     },
     {
       "position": 5,
-      "team": "EGUZKILORE-DURANA",
+      "team": "DUFF F.C.",
       "points": 0,
       "played": 0,
       "won": 0,
@@ -271,7 +271,7 @@
     },
     {
       "position": 6,
-      "team": "ESKALON CV",
+      "team": "EGUZKILORE-DURANA",
       "points": 0,
       "played": 0,
       "won": 0,
@@ -283,7 +283,7 @@
     },
     {
       "position": 7,
-      "team": "FOJANSA INTER-GASTEIZ F7",
+      "team": "ESKALON CV",
       "points": 0,
       "played": 0,
       "won": 0,
@@ -295,7 +295,7 @@
     },
     {
       "position": 8,
-      "team": "GAZTES FC",
+      "team": "FOJANSA INTER-GASTEIZ F7",
       "points": 0,
       "played": 0,
       "won": 0,
@@ -307,7 +307,7 @@
     },
     {
       "position": 9,
-      "team": "LA MANDARINA MECANICA FC",
+      "team": "GAZTES FC",
       "points": 0,
       "played": 0,
       "won": 0,
@@ -319,7 +319,7 @@
     },
     {
       "position": 10,
-      "team": "MACABI DE LEVANTAR",
+      "team": "LA MANDARINA MECANICA FC",
       "points": 0,
       "played": 0,
       "won": 0,
@@ -331,7 +331,7 @@
     },
     {
       "position": 11,
-      "team": "MATURE LOVERS",
+      "team": "MACABI DE LEVANTAR",
       "points": 0,
       "played": 0,
       "won": 0,
@@ -343,7 +343,7 @@
     },
     {
       "position": 12,
-      "team": "NIUTIM F7",
+      "team": "MATURE LOVERS",
       "points": 0,
       "played": 0,
       "won": 0,
@@ -355,7 +355,7 @@
     },
     {
       "position": 13,
-      "team": "PARTIZAN BO",
+      "team": "NIUTIM F7",
       "points": 0,
       "played": 0,
       "won": 0,
@@ -367,7 +367,7 @@
     },
     {
       "position": 14,
-      "team": "RECREATIVO URKO TABERNA",
+      "team": "PARTIZAN BO",
       "points": 0,
       "played": 0,
       "won": 0,

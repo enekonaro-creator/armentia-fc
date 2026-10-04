@@ -113,7 +113,7 @@ const cssBalance = [...css].reduce((balance, character) => {
 }, 0);
 check(cssBalance === 0, "style.css tiene llaves descompensadas.");
 check(html.includes('src="script.js"'), "index.html no carga script.js.");
-check(html.includes('href="style.css"'), "index.html no carga style.css.");
+check(/href="style\.css(?:\?[^"\s]*)?"/.test(html), "index.html no carga style.css.");
 
 if (errors.length) {
   console.error(`Validación fallida (${errors.length} errores):`);

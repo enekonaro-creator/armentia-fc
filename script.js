@@ -154,6 +154,9 @@ function renderMatchCard(container, match, type) {
   );
 
   container.append(label, teams, meta);
+  if (type !== "next" && match.mvp) {
+    container.append(element("p", "match-meta", `MVP · ${match.mvp}`));
+  }
 }
 
 function renderAchievements() {
@@ -279,8 +282,8 @@ function renderPlayerStats() {
   const topAssister = [...players].sort((a, b) => b.assists - a.assists)[0];
   const totals = players.reduce((sum, player) => ({ goals: sum.goals + player.goals, assists: sum.assists + player.assists }), { goals: 0, assists: 0 });
   [
-    { value: topScorer.goals, label: translate("topScorer"), name: topScorer.name },
-    { value: topAssister.assists, label: translate("topAssister"), name: topAssister.name },
+    { value: topScorer.goals, label: translate("topScorer"), name: players.filter((player) => player.goals === topScorer.goals).map((player) => player.name).join(" · ") },
+    { value: topAssister.assists, label: translate("topAssister"), name: players.filter((player) => player.assists === topAssister.assists).map((player) => player.name).join(" · ") },
     { value: totals.goals, label: translate("teamGoals"), name: `${totals.assists} ${translate("assists").toLowerCase()}` }
   ].forEach((stat) => {
     const card = element("article", "summary-stat");

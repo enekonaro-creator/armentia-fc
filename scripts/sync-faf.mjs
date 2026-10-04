@@ -228,8 +228,20 @@ if (matches.some((match) => !standings.some((team) => normalize(team.team) === n
 }
 const previousSite = JSON.parse(await readFile(sitePath, "utf8"));
 for (const match of matches) {
-  const previous = previousSite.matches.find((item) => item.round === match.round && item.opponent === match.opponent && item.date === match.date);
-  if (previous) match.venue = previous.venue;
+  const previous = previousSite.season === `${config.season.slice(0, 4)}/${config.season.slice(-2)}`
+    ? previousSite.matches.find((item) => item.round === match.round && normalize(item.opponent) === normalize(match.opponent) && item.home === match.home)
+    : null;
+  if (previous) {
+    match.venue = previous.venue;
+    if (previous.mvp) match.mvp = previous.mvp;
+    if (previous.playerStats) match.playerStats = previous.playerStats;
+    // Keep club-reported results until FAF publishes the official score.
+    if (previous.clubReported && !Number.isInteger(match.goalsFor)) {
+      match.goalsFor = previous.goalsFor;
+      match.goalsAgainst = previous.goalsAgainst;
+      match.clubReported = true;
+    }
+  }
 }
 const played = matches.filter((match) => Number.isInteger(match.goalsFor));
 const today = new Intl.DateTimeFormat("sv-SE", { timeZone: "Europe/Madrid" }).format(new Date());

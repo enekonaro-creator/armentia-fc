@@ -5,14 +5,14 @@
   "standingsUrl": "https://www.faf-aff.eus/pnfg/NPcd/NFG_VisClasificacion?cod_primaria=1000120&codgrupo=25027571&codcompeticion=24057902",
   "dataSource": {
     "type": "faf",
-    "updatedAt": "2026-10-05T16:00:10.088Z"
+    "updatedAt": "2026-10-09T14:22:07.629Z"
   },
   "nextMatch": {
     "round": 2,
     "opponent": "CERVECERÍA TXISTU",
-    "date": "2026-10-18",
+    "date": "2026-10-18T19:00:00+02:00",
     "home": true,
-    "venue": "MUNICIPAL VITORIA-GASTEIZ",
+    "venue": "LA VITORIANA-2",
     "competition": {
       "eu": "F7 3. maila · A taldea",
       "es": "3ª División F7 · Grupo A"
@@ -134,9 +134,9 @@
     {
       "round": 2,
       "opponent": "CERVECERÍA TXISTU",
-      "date": "2026-10-18",
+      "date": "2026-10-18T19:00:00+02:00",
       "home": true,
-      "venue": "MUNICIPAL VITORIA-GASTEIZ",
+      "venue": "LA VITORIANA-2",
       "competition": {
         "eu": "F7 3. maila · A taldea",
         "es": "3ª División F7 · Grupo A"

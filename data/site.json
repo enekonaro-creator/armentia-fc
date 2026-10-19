@@ -5,7 +5,7 @@
   "standingsUrl": "https://www.faf-aff.eus/pnfg/NPcd/NFG_VisClasificacion?cod_primaria=1000120&codgrupo=25027571&codcompeticion=24057902",
   "dataSource": {
     "type": "faf",
-    "updatedAt": "2026-10-16T12:24:54.815Z"
+    "updatedAt": "2026-10-19T14:40:25.178Z"
   },
   "nextMatch": {
     "round": 3,
@@ -28,8 +28,6 @@
       "eu": "F7 3. maila · A taldea",
       "es": "3ª División F7 · Grupo A"
     },
-    "goalsFor": 3,
-    "goalsAgainst": 7,
     "mvp": "Ruiki",
     "playerStats": [
       {
@@ -43,6 +41,8 @@
         "assists": 0
       }
     ],
+    "goalsFor": 3,
+    "goalsAgainst": 7,
     "clubReported": true
   },
   "matches": [
@@ -112,8 +112,6 @@
         "eu": "F7 3. maila · A taldea",
         "es": "3ª División F7 · Grupo A"
       },
-      "goalsFor": 3,
-      "goalsAgainst": 7,
       "mvp": "Ruiki",
       "playerStats": [
         {
@@ -127,6 +125,8 @@
           "assists": 0
         }
       ],
+      "goalsFor": 3,
+      "goalsAgainst": 7,
       "clubReported": true
     },
     {

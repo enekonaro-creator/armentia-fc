@@ -5,7 +5,7 @@
   "standingsUrl": "https://www.faf-aff.eus/pnfg/NPcd/NFG_VisClasificacion?cod_primaria=1000120&codgrupo=25027571&codcompeticion=24057902",
   "dataSource": {
     "type": "faf",
-    "updatedAt": "2026-10-20T12:43:15.931Z"
+    "updatedAt": "2026-10-23T12:37:37.089Z"
   },
   "nextMatch": {
     "round": 3,
@@ -141,9 +141,9 @@
     {
       "round": 4,
       "opponent": "GAZTES FC",
-      "date": "2026-11-01",
+      "date": "2026-11-01T13:30:00+01:00",
       "home": true,
-      "venue": "",
+      "venue": "OLARANBE Nº 3",
       "competition": {
         "eu": "F7 3. maila · A taldea",
         "es": "3ª División F7 · Grupo A"

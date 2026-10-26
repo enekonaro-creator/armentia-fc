@@ -19,30 +19,41 @@
     }
   },
   "lastMatch": {
-    "round": 2,
-    "opponent": "CERVECERÍA TXISTU",
-    "date": "2026-10-18T19:00:00+02:00",
-    "home": true,
-    "venue": "LA VITORIANA-2",
+    "round": 3,
+    "opponent": "ESKALON CV",
+    "date": "2026-10-24T15:00:00+02:00",
+    "home": false,
+    "venue": "BETOÑO Nº 2",
     "competition": {
       "eu": "F7 3. maila · A taldea",
       "es": "3ª División F7 · Grupo A"
     },
-    "goalsFor": 3,
-    "goalsAgainst": 7,
-    "mvp": "Ruiki",
+    "goalsFor": 5,
+    "goalsAgainst": 4,
+    "mvp": "Ekhi",
     "playerStats": [
       {
-        "number": 7,
-        "goals": 2,
+        "name": "Ekhi",
+        "goals": 3,
+        "assists": 0
+      },
+      {
+        "name": "Aner",
+        "goals": 1,
         "assists": 0
       },
       {
         "number": 21,
         "goals": 1,
         "assists": 0
+      },
+      {
+        "name": "Erlantz",
+        "goals": 0,
+        "assists": 1
       }
-    ]
+    ],
+    "clubReported": true
   },
   "matches": [
     {
@@ -136,7 +147,33 @@
       "competition": {
         "eu": "F7 3. maila · A taldea",
         "es": "3ª División F7 · Grupo A"
-      }
+      },
+      "goalsFor": 5,
+      "goalsAgainst": 4,
+      "mvp": "Ekhi",
+      "playerStats": [
+        {
+          "name": "Ekhi",
+          "goals": 3,
+          "assists": 0
+        },
+        {
+          "name": "Aner",
+          "goals": 1,
+          "assists": 0
+        },
+        {
+          "number": 21,
+          "goals": 1,
+          "assists": 0
+        },
+        {
+          "name": "Erlantz",
+          "goals": 0,
+          "assists": 1
+        }
+      ],
+      "clubReported": true
     },
     {
       "round": 4,
@@ -544,12 +581,27 @@
     },
     {
       "number": 21,
-      "goals": 2,
+      "goals": 3,
       "assists": 1
     },
     {
       "number": 59,
       "goals": 1,
+      "assists": 1
+    },
+    {
+      "name": "Ekhi",
+      "goals": 3,
+      "assists": 0
+    },
+    {
+      "name": "Aner",
+      "goals": 1,
+      "assists": 0
+    },
+    {
+      "name": "Erlantz",
+      "goals": 0,
       "assists": 1
     }
   ],

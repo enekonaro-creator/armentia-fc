@@ -52,7 +52,7 @@ for (const player of data.players) {
 }
 
 for (const stat of data.playerStats) {
-  check(jerseyNumbers.has(stat.number), `Las estadísticas usan un dorsal inexistente: ${stat.number}`);
+  check(Number.isInteger(stat.number) ? jerseyNumbers.has(stat.number) : typeof stat.name === "string" && stat.name.trim().length > 0, `Estadística sin jugador válido: ${stat.number ?? stat.name}`);
   check(Number.isInteger(stat.goals) && stat.goals >= 0, `Goles inválidos para el dorsal ${stat.number}.`);
   check(Number.isInteger(stat.assists) && stat.assists >= 0, `Asistencias inválidas para el dorsal ${stat.number}.`);
 }

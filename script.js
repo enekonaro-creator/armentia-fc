@@ -266,8 +266,10 @@ function renderPlayerStats() {
   selectors.playerChart.replaceChildren();
 
   const savedStats = new Map((state.data.playerStats ?? []).map((item) => [item.number, item]));
+  const namedStats = (state.data.playerStats ?? []).filter((item) => !Number.isInteger(item.number) && item.name);
   const players = state.data.players
     .map((player) => ({ ...player, goals: savedStats.get(player.number)?.goals ?? 0, assists: savedStats.get(player.number)?.assists ?? 0 }))
+    .concat(namedStats)
     .filter((player) => player.goals > 0 || player.assists > 0)
     .sort((a, b) => (b.goals + b.assists) - (a.goals + a.assists) || b.goals - a.goals);
 
@@ -296,7 +298,7 @@ function renderPlayerStats() {
     const total = player.goals + player.assists;
     const row = element("article", "chart-row");
     const identity = element("div", "chart-identity");
-    identity.append(element("span", "chart-number", String(player.number).padStart(2, "0")), element("strong", "chart-name", player.name));
+    identity.append(element("span", "chart-number", Number.isInteger(player.number) ? String(player.number).padStart(2, "0") : "–"), element("strong", "chart-name", player.name));
     const track = element("div", "chart-track");
     const bar = element("span", "chart-bar");
     bar.style.width = `${Math.max(8, (total / maxContributions) * 100)}%`;

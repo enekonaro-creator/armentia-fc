@@ -5,7 +5,7 @@
   "standingsUrl": "https://www.faf-aff.eus/pnfg/NPcd/NFG_VisClasificacion?cod_primaria=1000120&codgrupo=25027571&codcompeticion=24057902",
   "dataSource": {
     "type": "faf",
-    "updatedAt": "2026-10-23T12:37:37.089Z"
+    "updatedAt": "2026-10-26T14:16:03.417Z"
   },
   "nextMatch": {
     "round": 4,
@@ -28,8 +28,6 @@
       "eu": "F7 3. maila · A taldea",
       "es": "3ª División F7 · Grupo A"
     },
-    "goalsFor": 5,
-    "goalsAgainst": 4,
     "mvp": "Ekhi",
     "playerStats": [
       {
@@ -53,6 +51,8 @@
         "assists": 1
       }
     ],
+    "goalsFor": 5,
+    "goalsAgainst": 4,
     "clubReported": true
   },
   "matches": [
@@ -148,8 +148,6 @@
         "eu": "F7 3. maila · A taldea",
         "es": "3ª División F7 · Grupo A"
       },
-      "goalsFor": 5,
-      "goalsAgainst": 4,
       "mvp": "Ekhi",
       "playerStats": [
         {
@@ -173,6 +171,8 @@
           "assists": 1
         }
       ],
+      "goalsFor": 5,
+      "goalsAgainst": 4,
       "clubReported": true
     },
     {

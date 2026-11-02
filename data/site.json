@@ -5,7 +5,7 @@
   "standingsUrl": "https://www.faf-aff.eus/pnfg/NPcd/NFG_VisClasificacion?cod_primaria=1000120&codgrupo=25027571&codcompeticion=24057902",
   "dataSource": {
     "type": "faf",
-    "updatedAt": "2026-11-02T17:03:58.991Z"
+    "updatedAt": "2026-11-02T20:44:51.516Z"
   },
   "nextMatch": {
     "round": 5,
@@ -30,13 +30,19 @@
     },
     "goalsFor": 3,
     "goalsAgainst": 2,
-    "mvp": "Ruiki",
     "scoreOverride": {
       "goalsFor": 3,
       "goalsAgainst": 2,
       "source": "club",
       "confirmedAt": "2026-11-02"
     },
+    "officialScore": {
+      "goalsFor": 2,
+      "goalsAgainst": 3
+    },
+    "scoreDisputed": true,
+    "reportUrl": "https://www.instagram.com/p/DfM_-6TiOGZ/",
+    "mvp": "Ruiki",
     "playerStats": [
       {
         "number": 21,
@@ -58,13 +64,7 @@
         "goals": 0,
         "assists": 1
       }
-    ],
-    "reportUrl": "https://www.instagram.com/p/DfM_-6TiOGZ/",
-    "officialScore": {
-      "goalsFor": 2,
-      "goalsAgainst": 3
-    },
-    "scoreDisputed": true
+    ]
   },
   "matches": [
     {
@@ -161,6 +161,7 @@
       },
       "goalsFor": 5,
       "goalsAgainst": 4,
+      "reportUrl": "https://www.instagram.com/p/De9NQQZDQ0T/",
       "mvp": "Ekhi",
       "playerStats": [
         {
@@ -183,8 +184,7 @@
           "goals": 0,
           "assists": 1
         }
-      ],
-      "reportUrl": "https://www.instagram.com/p/De9NQQZDQ0T/"
+      ]
     },
     {
       "round": 4,
@@ -198,13 +198,19 @@
       },
       "goalsFor": 3,
       "goalsAgainst": 2,
-      "mvp": "Ruiki",
       "scoreOverride": {
         "goalsFor": 3,
         "goalsAgainst": 2,
         "source": "club",
         "confirmedAt": "2026-11-02"
       },
+      "officialScore": {
+        "goalsFor": 2,
+        "goalsAgainst": 3
+      },
+      "scoreDisputed": true,
+      "reportUrl": "https://www.instagram.com/p/DfM_-6TiOGZ/",
+      "mvp": "Ruiki",
       "playerStats": [
         {
           "number": 21,
@@ -226,13 +232,7 @@
           "goals": 0,
           "assists": 1
         }
-      ],
-      "reportUrl": "https://www.instagram.com/p/DfM_-6TiOGZ/",
-      "officialScore": {
-        "goalsFor": 2,
-        "goalsAgainst": 3
-      },
-      "scoreDisputed": true
+      ]
     },
     {
       "round": 5,

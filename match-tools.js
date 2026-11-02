@@ -3,6 +3,15 @@
   const timed = match => /T\d{2}:\d{2}.*(?:Z|[+-]\d{2}:\d{2})$/.test(match.date) && !Number.isNaN(Date.parse(match.date));
   const utc = date => new Date(date).toISOString().replace(/[-:]/g, '').replace(/\.\d{3}Z$/, 'Z');
   const escape = text => String(text).replace(/\\/g, '\\\\').replace(/\r?\n/g, '\\n').replace(/,/g, '\\,').replace(/;/g, '\\;');
+  function verifiedVenue(name, venues = {}) {
+    const venue = Object.hasOwn(venues, name) ? venues[name] : null;
+    if (!venue || venue.verified !== true || typeof venue.mapUrl !== 'string') return null;
+    try {
+      const url = new URL(venue.mapUrl);
+      if (url.protocol !== 'https:' || !['www.google.com', 'maps.google.com', 'maps.app.goo.gl'].includes(url.hostname)) return null;
+      return venue;
+    } catch { return null; }
+  }
   function fold(line) {
     const lines = []; let part = '', bytes = 0;
     for (const c of line) { const size = new TextEncoder().encode(c).length; if (bytes + size > 75) { lines.push(part); part = ' '; bytes = 1; } part += c; bytes += size; }
@@ -23,5 +32,5 @@
     const official = Number.isInteger(match.goalsFor) ? {goalsFor: match.goalsFor, goalsAgainst: match.goalsAgainst} : null;
     return {...match, goalsFor: o.goalsFor, goalsAgainst: o.goalsAgainst, scoreOverride: o, officialScore: official, scoreDisputed: !official || official.goalsFor !== o.goalsFor || official.goalsAgainst !== o.goalsAgainst};
   }
-  root.ArmentiaMatchTools = {timed, calendar, preserveScore};
+  root.ArmentiaMatchTools = {timed, calendar, preserveScore, verifiedVenue};
 })(globalThis);

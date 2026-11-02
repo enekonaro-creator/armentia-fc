@@ -997,5 +997,36 @@
   "competition": {
     "eu": "F7 3. maila · A taldea",
     "es": "3ª División F7 · Grupo A"
+  },
+  "venues": {
+    "SANSOMENDI-2": {
+      "verified": true,
+      "address": "Ramón Rubial, 2, 01010 Vitoria-Gasteiz",
+      "mapUrl": "https://www.google.com/maps/place/Campo+de+F%C3%BAtbol+-+Sansomendi+2/@42.8554617,-2.6981028,819m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd4fc36cb1438b0b:0x6c2770df34ff5e10!8m2!3d42.8554617!4d-2.6955225!16s%2Fg%2F11sf147dzc?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D",
+      "sourceUrl": "https://www.euskadi.eus/equipamiento/campos-futbol-c-c-lakua/57826401/web01-a2kijoko/es/",
+      "verifiedAt": "2026-11-02",
+      "verification": "Ficha del complejo de Lakua y pin específico de Sansomendi 2 comprobado en vista de satélite."
+    },
+    "LA VITORIANA-2": {
+      "verified": true,
+      "address": "Puerto Urkiola s/n, 01013 Vitoria-Gasteiz",
+      "mapUrl": "https://www.google.com/maps/place/Campo+Municipal+De+Futbol+La+Vitoriana/@42.8607043,-2.6742223,819m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd4fc2459bbb6eab:0xa683c81f52188f39!8m2!3d42.8607043!4d-2.671642!16s%2Fg%2F11cnkfzwmf?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D",
+      "sourceUrl": "https://www.vitoria-gasteiz.org/wb021/was/contenidoAction.do?idioma=es&uid=entuo_8_5_7",
+      "verifiedAt": "2026-11-02",
+      "verification": "Punto del recinto de los campos municipales, con acceso por Puerto Urkiola; ambos campos visibles en satélite."
+    },
+    "OLARANBE Nº 3": {
+      "verified": true,
+      "address": "Carretera de Otazu s/n, 01194 Vitoria-Gasteiz",
+      "mapUrl": "https://www.google.com/maps/place/Olaranbe/@42.8264601,-2.646086,819m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd4fe82452fe1f3b:0x621faeef2a695047!8m2!3d42.8264601!4d-2.646086!16s%2Fg%2F11bx2kwq8w?authuser=0&hl=es&entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D",
+      "sourceUrl": "https://www.vitoria-gasteiz.org/wb021/was/contenidoAction.do?idioma=es&uid=entuo_8_5_8",
+      "verifiedAt": "2026-11-02",
+      "verification": "Recinto de fútbol confirmado por el club y comprobado en vista de satélite."
+    },
+    "BETOÑO Nº 2": {
+      "verified": false,
+      "sourceUrl": "https://www.vitoria-gasteiz.org/wb021/was/contenidoAction.do?idioma=es&uid=u53757847_12def20e260__7fb4",
+      "verification": "Pendiente de confirmar con el club el pin del campo número 2. No mostrar una búsqueda genérica."
+    }
   }
 }

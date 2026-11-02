@@ -1,6 +1,14 @@
 import assert from 'node:assert/strict';
 import '../match-tools.js';
 const {calendar, preserveScore, timed} = globalThis.ArmentiaMatchTools;
+const {verifiedVenue} = globalThis.ArmentiaMatchTools;
+assert.equal(verifiedVenue('SANSOMENDI-2'), null, 'No generic search for an unverified venue');
+assert.equal(verifiedVenue('BETOÑO Nº 2', {'BETOÑO Nº 2': {verified:false,mapUrl:'https://www.google.com/maps/place/example'}}), null);
+assert.equal(verifiedVenue('Unknown', {}), null);
+assert.equal(verifiedVenue('bad', {bad:{verified:true,mapUrl:'javascript:alert(1)'}}), null);
+assert.equal(verifiedVenue('bad', {bad:{verified:true,mapUrl:'https://www.google.com.evil.test/maps'}}), null);
+const pin = {verified:true,address:'Puerto Urkiola s/n',mapUrl:'https://www.google.com/maps/place/La+Vitoriana/'};
+assert.equal(verifiedVenue('LA VITORIANA-2', {'LA VITORIANA-2':pin}),pin);
 const old = {scoreOverride:{goalsFor:3,goalsAgainst:2,source:'club'}};
 assert.equal(preserveScore({goalsFor:2,goalsAgainst:3},old).scoreDisputed,true);
 assert.equal(preserveScore({goalsFor:3,goalsAgainst:2},old).scoreDisputed,false);

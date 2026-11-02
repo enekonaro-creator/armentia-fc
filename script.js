@@ -169,9 +169,11 @@ function downloadCalendar(matches) {
 
 function matchActions(match) {
   const actions = element("div", "match-actions");
-  if (match.venue) {
+  const venue = ArmentiaMatchTools.verifiedVenue(match.venue, state.data.venues);
+  if (venue) {
     const map = element("a", "match-action", translate("directions"));
-    map.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(match.venue + " Vitoria-Gasteiz")}`;
+    map.href = venue.mapUrl;
+    map.title = `${match.venue} · ${venue.address}`;
     map.target = "_blank"; map.rel = "noopener"; actions.append(map);
   }
   if (!Number.isInteger(match.goalsFor) && ArmentiaMatchTools.timed(match)) {

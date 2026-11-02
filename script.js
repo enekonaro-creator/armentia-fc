@@ -157,6 +157,44 @@ function renderMatchCard(container, match, type) {
   if (type !== "next" && match.mvp) {
     container.append(element("p", "match-meta", `MVP · ${match.mvp}`));
   }
+  container.append(matchActions(match));
+  if (match.scoreDisputed) container.append(element("p", "score-notice", translate("scoreNotice")));
+}
+
+function downloadCalendar(matches) {
+  const url = URL.createObjectURL(new Blob([ArmentiaMatchTools.calendar(matches, state.data.season)], {type: "text/calendar;charset=utf-8"}));
+  const a = document.createElement("a"); a.href = url; a.download = "Armentia-FC.ics";
+  document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+function matchActions(match) {
+  const actions = element("div", "match-actions");
+  if (match.venue) {
+    const map = element("a", "match-action", translate("directions"));
+    map.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(match.venue + " Vitoria-Gasteiz")}`;
+    map.target = "_blank"; map.rel = "noopener"; actions.append(map);
+  }
+  if (!Number.isInteger(match.goalsFor) && ArmentiaMatchTools.timed(match)) {
+    const button = element("button", "match-action", translate("addCalendar")); button.type = "button";
+    button.addEventListener("click", () => downloadCalendar([match])); actions.append(button);
+  }
+  if (match.reportUrl) {
+    const report = element("a", "match-action", translate("matchReport"));
+    report.href = match.reportUrl; report.target = "_blank"; report.rel = "noopener"; actions.append(report);
+  }
+  return actions;
+}
+
+function matchDetails(match) {
+  const details = element("details", "match-details");
+  details.append(element("summary", "", translate("matchDetails")));
+  if (match.mvp) details.append(element("p", "", `MVP · ${match.mvp}`));
+  const list = element("ul");
+  (match.playerStats || []).forEach(stat => {
+    const name = stat.name || state.data.players.find(p => p.number === stat.number)?.name || "–";
+    list.append(element("li", "", `${name} · ${stat.goals} ${translate("goalStatShort")} · ${stat.assists} ${translate("assistStatShort")}`));
+  });
+  details.append(list); return details;
 }
 
 function renderAchievements() {
@@ -205,6 +243,8 @@ function renderFixtureList(titleKey, matches, className) {
       ? element("span", "fixture-time", translate("pending"))
       : element("strong", "fixture-result", `${match.goalsFor}–${match.goalsAgainst}`);
     item.append(round, opponent, detail, result);
+    item.append(matchActions(match));
+    if (match.playerStats?.length) item.append(matchDetails(match));
     list.append(item);
   });
   group.append(list);
@@ -220,6 +260,16 @@ function renderFixtures() {
     renderFixtureList("playedMatches", played, "played"),
     renderFixtureList("upcomingMatches", upcoming, "upcoming")
   );
+  const upcomingTimed = upcoming.filter(ArmentiaMatchTools.timed);
+  if (upcomingTimed.length) {
+    const button = element("button", "match-action", translate("downloadCalendar")); button.type = "button";
+    button.addEventListener("click", () => downloadCalendar(upcomingTimed));
+    selectors.fixtures.append(button, element("p", "calendar-note", translate("calendarNote")));
+  }
+  const videos = element("a", "match-action", translate("followLive"));
+  videos.href = "https://www.youtube.com/channel/UCWNCdmRixRG6i0wIh2NWRkA"; videos.target = "_blank"; videos.rel = "noopener";
+  selectors.fixtures.append(videos);
+  if (matches.some(m => m.scoreDisputed)) selectors.fixtures.append(element("p", "score-notice", translate("scoreNotice")));
 
   const synced = state.data.dataSource?.updatedAt;
   if (synced) {
@@ -444,3 +494,4 @@ async function initialize() {
 }
 
 initialize();
+

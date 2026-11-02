@@ -1609,3 +1609,16 @@ h3 {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* Match tools: wrapping controls, match statistics and source notices. */
+.match-actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+.match-action { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:10px 14px; border:1px solid #f77b26; border-radius:5px; background:transparent; color:inherit; font:inherit; font-size:14px; text-decoration:none; cursor:pointer; }
+.match-action:hover, .match-action:focus-visible { background:#f77b26; color:#111; }
+.match-action:focus-visible, .match-details summary:focus-visible { outline:2px solid currentColor; outline-offset:3px; }
+.fixture-row > .match-actions, .fixture-row > .match-details { grid-column:1 / -1; min-width:0; }
+.match-details { margin-top:8px; font-size:14px; }
+.match-details summary { cursor:pointer; padding:10px 0; }
+.match-details ul { padding-left:20px; line-height:1.8; }
+.score-notice, .calendar-note { font-size:13px; line-height:1.6; margin-top:12px; max-width:70ch; }
+.score-notice { color:#ffb16c; }

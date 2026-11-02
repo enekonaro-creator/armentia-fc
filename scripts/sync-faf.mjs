@@ -226,13 +226,16 @@ const standings = parseStandings(standingsHtml);
 if (matches.some((match) => !standings.some((team) => normalize(team.team) === normalize(match.opponent)))) {
   throw new Error("El calendario y la clasificación no corresponden al mismo grupo.");
 }
+await import("../match-tools.js");
 const previousSite = JSON.parse(await readFile(sitePath, "utf8"));
 for (const match of matches) {
   const previous = previousSite.season === `${config.season.slice(0, 4)}/${config.season.slice(-2)}`
     ? previousSite.matches.find((item) => item.round === match.round && normalize(item.opponent) === normalize(match.opponent) && item.home === match.home)
     : null;
   if (previous) {
-    match.venue = previous.venue;
+    if (!match.venue) match.venue = previous.venue;
+    Object.assign(match, globalThis.ArmentiaMatchTools.preserveScore(match, previous));
+    if (previous.reportUrl) match.reportUrl = previous.reportUrl;
     if (previous.mvp) match.mvp = previous.mvp;
     if (previous.playerStats) match.playerStats = previous.playerStats;
     // Keep club-reported results until FAF publishes the official score.
@@ -271,3 +274,4 @@ site.dataSource = {
 
 await writeFile(sitePath, `${JSON.stringify(site, null, 2)}\n`, "utf8");
 console.log(`FAF sincronizada: ${matches.length} partidos y ${standings.length} equipos.`);
+

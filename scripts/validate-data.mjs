@@ -59,6 +59,9 @@ for (const stat of data.playerStats) {
 
 for (const [index, match] of data.matches.entries()) {
   checkMatch(match, `matches[${index}]`, Number.isInteger(match?.goalsFor));
+  if (match.playerStats?.length) {
+    check(match.playerStats.reduce((sum, stat) => sum + stat.goals, 0) === match.goalsFor, `Jornada ${match.round}: los goles individuales no coinciden con el marcador.`);
+  }
   check(Number.isInteger(match.round) && match.round > 0, `matches[${index}].round debe ser una jornada válida.`);
 }
 
@@ -122,3 +125,4 @@ if (errors.length) {
 }
 
 console.log(`Validación correcta: ${data.players.length} jugadores, ${data.sponsors.length} patrocinadores y ${data.gallery.length} fotos.`);
+

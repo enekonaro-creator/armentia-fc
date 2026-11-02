@@ -1,0 +1,18 @@
+import assert from 'node:assert/strict';
+import '../match-tools.js';
+const {calendar, preserveScore, timed} = globalThis.ArmentiaMatchTools;
+const old = {scoreOverride:{goalsFor:3,goalsAgainst:2,source:'club'}};
+assert.equal(preserveScore({goalsFor:2,goalsAgainst:3},old).scoreDisputed,true);
+assert.equal(preserveScore({goalsFor:3,goalsAgainst:2},old).scoreDisputed,false);
+assert.equal(preserveScore({},old).goalsFor,3);
+assert.equal(preserveScore({goalsFor:1,goalsAgainst:1},{}).goalsFor,1);
+const m = {round:5,date:'2026-11-08T16:00:00+01:00',home:false,opponent:'MACABI DE LEVANTAR',venue:'LA VITORIANA-2'};
+assert.equal(timed({date:'2026-11-15'}),false);
+const output = calendar([m,{...m,date:'2026-11-15'}],'2026/27');
+assert.ok(output.includes('DTSTART:20261108T150000Z'));
+assert.equal(output.match(/BEGIN:VEVENT/g).length,1);
+const long = calendar([{...m,opponent:'Á'.repeat(110)+', A;B\nC'}],'2026/27');
+assert.ok(long.split('\r\n').every(line=>Buffer.byteLength(line)<=75));
+assert.ok(long.includes('\\,'));
+assert.ok(calendar([{...m,date:'2027-07-04T16:00:00+02:00'}],'2026/27').includes('DTSTART:20270704T140000Z'));
+console.log('Calendar time zones, escaping and score override regression checks passed.');

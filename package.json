@@ -4,7 +4,7 @@
   "private": true,
   "description": "Web oficial de Armentia FC",
   "scripts": {
-    "test": "node --check script.js && node --check scripts/sync-faf.mjs && node --check scripts/update-player-stats.mjs && node scripts/validate-data.mjs",
+    "test": "node --check script.js && node --check scripts/sync-faf.mjs && node --check scripts/update-player-stats.mjs && node scripts/validate-data.mjs && node scripts/test-match-tools.mjs",
     "sync:faf": "node scripts/sync-faf.mjs",
     "sync:faf:dry": "node scripts/sync-faf.mjs --dry-run",
     "preview:build": "node scripts/build-preview.mjs"

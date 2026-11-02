@@ -28,8 +28,43 @@
       "eu": "F7 3. maila · A taldea",
       "es": "3ª División F7 · Grupo A"
     },
-    "goalsFor": 2,
-    "goalsAgainst": 3
+    "goalsFor": 3,
+    "goalsAgainst": 2,
+    "mvp": "Ruiki",
+    "scoreOverride": {
+      "goalsFor": 3,
+      "goalsAgainst": 2,
+      "source": "club",
+      "confirmedAt": "2026-11-02"
+    },
+    "playerStats": [
+      {
+        "number": 21,
+        "goals": 3,
+        "assists": 0
+      },
+      {
+        "number": 16,
+        "goals": 0,
+        "assists": 1
+      },
+      {
+        "number": 7,
+        "goals": 0,
+        "assists": 1
+      },
+      {
+        "number": 44,
+        "goals": 0,
+        "assists": 1
+      }
+    ],
+    "reportUrl": "https://www.instagram.com/p/DfM_-6TiOGZ/",
+    "officialScore": {
+      "goalsFor": 2,
+      "goalsAgainst": 3
+    },
+    "scoreDisputed": true
   },
   "matches": [
     {
@@ -148,7 +183,8 @@
           "goals": 0,
           "assists": 1
         }
-      ]
+      ],
+      "reportUrl": "https://www.instagram.com/p/De9NQQZDQ0T/"
     },
     {
       "round": 4,
@@ -160,8 +196,43 @@
         "eu": "F7 3. maila · A taldea",
         "es": "3ª División F7 · Grupo A"
       },
-      "goalsFor": 2,
-      "goalsAgainst": 3
+      "goalsFor": 3,
+      "goalsAgainst": 2,
+      "mvp": "Ruiki",
+      "scoreOverride": {
+        "goalsFor": 3,
+        "goalsAgainst": 2,
+        "source": "club",
+        "confirmedAt": "2026-11-02"
+      },
+      "playerStats": [
+        {
+          "number": 21,
+          "goals": 3,
+          "assists": 0
+        },
+        {
+          "number": 16,
+          "goals": 0,
+          "assists": 1
+        },
+        {
+          "number": 7,
+          "goals": 0,
+          "assists": 1
+        },
+        {
+          "number": 44,
+          "goals": 0,
+          "assists": 1
+        }
+      ],
+      "reportUrl": "https://www.instagram.com/p/DfM_-6TiOGZ/",
+      "officialScore": {
+        "goalsFor": 2,
+        "goalsAgainst": 3
+      },
+      "scoreDisputed": true
     },
     {
       "round": 5,
@@ -539,12 +610,12 @@
     {
       "number": 7,
       "goals": 3,
-      "assists": 1
+      "assists": 2
     },
     {
       "number": 16,
       "goals": 2,
-      "assists": 1
+      "assists": 2
     },
     {
       "number": 17,
@@ -558,7 +629,7 @@
     },
     {
       "number": 21,
-      "goals": 3,
+      "goals": 6,
       "assists": 1
     },
     {
@@ -578,6 +649,11 @@
     },
     {
       "name": "Erlantz",
+      "goals": 0,
+      "assists": 1
+    },
+    {
+      "number": 44,
       "goals": 0,
       "assists": 1
     }
@@ -814,7 +890,15 @@
       "contactButton": "Idatzi e-maila",
       "dataError": "Ezin izan dira denboraldiko datuak kargatu. Saiatu berriro geroago.",
       "timePending": "Ordua zehazteke",
-      "venuePending": "Zelaia zehazteke"
+      "venuePending": "Zelaia zehazteke",
+      "directions": "Nola iritsi",
+      "addCalendar": "Egutegira gehitu",
+      "matchDetails": "Partiduko datuak",
+      "matchReport": "Ikusi argitalpena",
+      "followLive": "Zuzenekoak eta bideoak",
+      "scoreNotice": "Taldeak baieztatutako emaitza. FAFeko sailkapena zuzentzeko zain.",
+      "calendarNote": "Ordua baieztatuta duten partidak bakarrik. Ordutegia aldatzen bada, gehitu berriro.",
+      "downloadCalendar": "Deskargatu egutegia"
     },
     "es": {
       "skipLink": "Ir al contenido",
@@ -899,7 +983,15 @@
       "contactButton": "Enviar un email",
       "dataError": "No se han podido cargar los datos de la temporada. Inténtalo de nuevo más tarde.",
       "timePending": "Hora por confirmar",
-      "venuePending": "Campo por confirmar"
+      "venuePending": "Campo por confirmar",
+      "directions": "Cómo llegar",
+      "addCalendar": "Añadir al calendario",
+      "matchDetails": "Datos del partido",
+      "matchReport": "Ver publicación",
+      "followLive": "Directos y vídeos",
+      "scoreNotice": "Resultado confirmado por el club. Pendiente de corrección en la clasificación de la FAF.",
+      "calendarNote": "Solo partidos con hora confirmada. Si cambia el horario, vuelve a añadirlos.",
+      "downloadCalendar": "Descargar calendario"
     }
   },
   "competition": {

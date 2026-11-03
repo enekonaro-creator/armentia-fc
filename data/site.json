@@ -1024,9 +1024,12 @@
       "verification": "Recinto de fútbol confirmado por el club y comprobado en vista de satélite."
     },
     "BETOÑO Nº 2": {
-      "verified": false,
+      "verified": true,
+      "address": "Elgeta Kalea, s/n, 01013 Vitoria-Gasteiz, Araba",
+      "mapUrl": "https://www.google.com/maps/place/Campo+de+F%C3%BAtbol+de+Beto%C3%B1o/@42.8605504,-2.6533529,819m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd4fc2f0a6310c41:0xd528cd94ec667981!8m2!3d42.8605504!4d-2.6533529!16s%2Fg%2F11bc7qfqss?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D",
       "sourceUrl": "https://www.vitoria-gasteiz.org/wb021/was/contenidoAction.do?idioma=es&uid=u53757847_12def20e260__7fb4",
-      "verification": "Pendiente de confirmar con el club el pin del campo número 2. No mostrar una búsqueda genérica."
+      "verifiedAt": "2026-11-03",
+      "verification": "Dirección confirmada por el club. Pin del recinto de fútbol de Betoño en Elgeta, contrastado con la ficha municipal y comprobado en satélite; no representa una mitad específica de F7."
     }
   }
 }

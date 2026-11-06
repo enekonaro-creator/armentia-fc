@@ -5,7 +5,7 @@
   "standingsUrl": "https://www.faf-aff.eus/pnfg/NPcd/NFG_VisClasificacion?cod_primaria=1000120&codgrupo=25027571&codcompeticion=24057902",
   "dataSource": {
     "type": "faf",
-    "updatedAt": "2026-11-03T15:06:24.443Z"
+    "updatedAt": "2026-11-06T15:03:18.414Z"
   },
   "nextMatch": {
     "round": 5,
@@ -248,9 +248,9 @@
     {
       "round": 6,
       "opponent": "NIUTIM F7",
-      "date": "2026-11-15",
+      "date": "2026-11-15T19:00:00+01:00",
       "home": true,
-      "venue": "",
+      "venue": "SANSOMENDI-1",
       "competition": {
         "eu": "F7 3. maila · A taldea",
         "es": "3ª División F7 · Grupo A"

@@ -5,7 +5,7 @@
   "standingsUrl": "https://www.faf-aff.eus/pnfg/NPcd/NFG_VisClasificacion?cod_primaria=1000120&codgrupo=25027571&codcompeticion=24057902",
   "dataSource": {
     "type": "faf",
-    "updatedAt": "2026-11-09T17:28:44.544Z"
+    "updatedAt": "2026-11-10T15:35:30.914Z"
   },
   "nextMatch": {
     "round": 6,
@@ -406,6 +406,18 @@
     },
     {
       "position": 2,
+      "team": "CERVECERÍA TXISTU",
+      "points": 15,
+      "played": 5,
+      "won": 5,
+      "drawn": 0,
+      "lost": 0,
+      "goalsFor": 22,
+      "goalsAgainst": 8,
+      "isArmentia": false
+    },
+    {
+      "position": 3,
       "team": "NIUTIM F7",
       "points": 13,
       "played": 5,
@@ -417,7 +429,7 @@
       "isArmentia": false
     },
     {
-      "position": 3,
+      "position": 4,
       "team": "ARMENTIA F.C.",
       "points": 12,
       "played": 5,
@@ -427,18 +439,6 @@
       "goalsFor": 23,
       "goalsAgainst": 14,
       "isArmentia": true
-    },
-    {
-      "position": 4,
-      "team": "CERVECERÍA TXISTU",
-      "points": 12,
-      "played": 4,
-      "won": 4,
-      "drawn": 0,
-      "lost": 0,
-      "goalsFor": 15,
-      "goalsAgainst": 7,
-      "isArmentia": false
     },
     {
       "position": 5,
@@ -480,12 +480,12 @@
       "position": 8,
       "team": "GAZTES FC",
       "points": 7,
-      "played": 4,
+      "played": 5,
       "won": 2,
       "drawn": 1,
-      "lost": 1,
-      "goalsFor": 8,
-      "goalsAgainst": 6,
+      "lost": 2,
+      "goalsFor": 9,
+      "goalsAgainst": 13,
       "isArmentia": false
     },
     {

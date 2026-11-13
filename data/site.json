@@ -5,7 +5,7 @@
   "standingsUrl": "https://www.faf-aff.eus/pnfg/NPcd/NFG_VisClasificacion?cod_primaria=1000120&codgrupo=25027571&codcompeticion=24057902",
   "dataSource": {
     "type": "faf",
-    "updatedAt": "2026-11-10T15:35:30.914Z"
+    "updatedAt": "2026-11-13T15:23:20.329Z"
   },
   "nextMatch": {
     "round": 6,
@@ -272,9 +272,9 @@
     {
       "round": 7,
       "opponent": "DUFF F.C.",
-      "date": "2026-11-22",
+      "date": "2026-11-21T18:00:00+01:00",
       "home": false,
-      "venue": "",
+      "venue": "SANSOMENDI-2",
       "competition": {
         "eu": "F7 3. maila · A taldea",
         "es": "3ª División F7 · Grupo A"

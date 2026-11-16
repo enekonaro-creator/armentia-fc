@@ -5,12 +5,12 @@
   "standingsUrl": "https://www.faf-aff.eus/pnfg/NPcd/NFG_VisClasificacion?cod_primaria=1000120&codgrupo=25027571&codcompeticion=24057902",
   "dataSource": {
     "type": "faf",
-    "updatedAt": "2026-11-13T15:23:20.329Z"
+    "updatedAt": "2026-11-16T17:00:09.142Z"
   },
   "nextMatch": {
     "round": 7,
     "opponent": "DUFF F.C.",
-    "date": "2026-11-21T18:00:00+01:00",
+    "date": "2026-11-21T15:00:00+01:00",
     "home": false,
     "venue": "SANSOMENDI-2",
     "competition": {
@@ -28,9 +28,6 @@
       "eu": "F7 3. maila · A taldea",
       "es": "3ª División F7 · Grupo A"
     },
-    "clubReported": true,
-    "goalsFor": 1,
-    "goalsAgainst": 3,
     "mvp": "Iván",
     "playerStats": [
       {
@@ -43,7 +40,10 @@
         "goals": 0,
         "assists": 1
       }
-    ]
+    ],
+    "goalsFor": 1,
+    "goalsAgainst": 3,
+    "clubReported": true
   },
   "matches": [
     {
@@ -259,9 +259,6 @@
         "eu": "F7 3. maila · A taldea",
         "es": "3ª División F7 · Grupo A"
       },
-      "clubReported": true,
-      "goalsFor": 1,
-      "goalsAgainst": 3,
       "mvp": "Iván",
       "playerStats": [
         {
@@ -274,12 +271,15 @@
           "goals": 0,
           "assists": 1
         }
-      ]
+      ],
+      "goalsFor": 1,
+      "goalsAgainst": 3,
+      "clubReported": true
     },
     {
       "round": 7,
       "opponent": "DUFF F.C.",
-      "date": "2026-11-21T18:00:00+01:00",
+      "date": "2026-11-21T15:00:00+01:00",
       "home": false,
       "venue": "SANSOMENDI-2",
       "competition": {

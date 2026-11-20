@@ -5,7 +5,7 @@
   "standingsUrl": "https://www.faf-aff.eus/pnfg/NPcd/NFG_VisClasificacion?cod_primaria=1000120&codgrupo=25027571&codcompeticion=24057902",
   "dataSource": {
     "type": "faf",
-    "updatedAt": "2026-11-18T16:26:56.914Z"
+    "updatedAt": "2026-11-20T16:08:31.580Z"
   },
   "nextMatch": {
     "round": 7,
@@ -288,9 +288,9 @@
     {
       "round": 8,
       "opponent": "TAPADERA FC",
-      "date": "2026-11-29",
+      "date": "2026-11-29T10:30:00+01:00",
       "home": true,
-      "venue": "",
+      "venue": "LA VITORIANA-2",
       "competition": {
         "eu": "F7 3. maila · A taldea",
         "es": "3ª División F7 · Grupo A"

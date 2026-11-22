@@ -8,6 +8,17 @@
     "updatedAt": "2026-11-20T16:08:31.580Z"
   },
   "nextMatch": {
+    "round": 8,
+    "opponent": "TAPADERA FC",
+    "date": "2026-11-29T10:30:00+01:00",
+    "home": true,
+    "venue": "LA VITORIANA-2",
+    "competition": {
+      "eu": "F7 3. maila · A taldea",
+      "es": "3ª División F7 · Grupo A"
+    }
+  },
+  "lastMatch": {
     "round": 7,
     "opponent": "DUFF F.C.",
     "date": "2026-11-21T15:00:00+01:00",
@@ -16,31 +27,31 @@
     "competition": {
       "eu": "F7 3. maila · A taldea",
       "es": "3ª División F7 · Grupo A"
-    }
-  },
-  "lastMatch": {
-    "round": 6,
-    "opponent": "NIUTIM F7",
-    "date": "2026-11-15T19:00:00+01:00",
-    "home": true,
-    "venue": "SANSOMENDI-1",
-    "competition": {
-      "eu": "F7 3. maila · A taldea",
-      "es": "3ª División F7 · Grupo A"
     },
-    "goalsFor": 1,
-    "goalsAgainst": 3,
-    "mvp": "Iván",
+    "clubReported": true,
+    "goalsFor": 4,
+    "goalsAgainst": 4,
+    "mvp": "Sarri",
     "playerStats": [
       {
-        "number": 17,
-        "goals": 1,
+        "name": "Ekhi",
+        "goals": 2,
         "assists": 0
       },
       {
-        "number": 20,
-        "goals": 0,
+        "number": 16,
+        "goals": 1,
         "assists": 1
+      },
+      {
+        "number": 59,
+        "goals": 1,
+        "assists": 1
+      },
+      {
+        "number": 7,
+        "goals": 0,
+        "assists": 2
       }
     ]
   },
@@ -283,7 +294,33 @@
       "competition": {
         "eu": "F7 3. maila · A taldea",
         "es": "3ª División F7 · Grupo A"
-      }
+      },
+      "clubReported": true,
+      "goalsFor": 4,
+      "goalsAgainst": 4,
+      "mvp": "Sarri",
+      "playerStats": [
+        {
+          "name": "Ekhi",
+          "goals": 2,
+          "assists": 0
+        },
+        {
+          "number": 16,
+          "goals": 1,
+          "assists": 1
+        },
+        {
+          "number": 59,
+          "goals": 1,
+          "assists": 1
+        },
+        {
+          "number": 7,
+          "goals": 0,
+          "assists": 2
+        }
+      ]
     },
     {
       "round": 8,
@@ -628,12 +665,12 @@
     {
       "number": 7,
       "goals": 4,
-      "assists": 2
+      "assists": 4
     },
     {
       "number": 16,
-      "goals": 3,
-      "assists": 2
+      "goals": 4,
+      "assists": 3
     },
     {
       "number": 17,
@@ -652,12 +689,12 @@
     },
     {
       "number": 59,
-      "goals": 1,
-      "assists": 1
+      "goals": 2,
+      "assists": 2
     },
     {
       "name": "Ekhi",
-      "goals": 3,
+      "goals": 5,
       "assists": 1
     },
     {
